@@ -39,6 +39,8 @@
         <Setter Property="Template" Value="{StaticResource ButtonTemplate}" />
     </Style>
 
+    <Style BasedOn="{StaticResource ButtonStyle}" TargetType="{x:Type Button}" />
+
     <ControlTemplate x:Key="ButtonTemplate" TargetType="{x:Type Button}">
         <Border x:Name="border"
             Background="{TemplateBinding Background}"
