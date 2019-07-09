@@ -62,6 +62,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="Theme.cs" />
+    <Compile Include="ThemeResourceDictionary.cs" />
     <Compile Include="ThemeResourceExtension.cs" />
     <Compile Include="ThemeResourceKey.cs" />
     <Compile Include="ThemeType.cs" />

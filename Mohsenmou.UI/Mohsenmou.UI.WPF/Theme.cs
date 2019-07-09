@@ -8,12 +8,12 @@ namespace Mohsenmou.UI.WPF
     {
         [ThreadStatic]
         private static ResourceDictionary resourceDictionary;
-
+        public static ThemeType ThemeType { get; set; } = ThemeType.Light;
         internal static ResourceDictionary ResourceDictionary
         {
             get
             {
-                if (resourceDictionary!=null)
+                if (resourceDictionary != null)
                 {
                     return resourceDictionary;
                 }
@@ -22,9 +22,19 @@ namespace Mohsenmou.UI.WPF
                 return resourceDictionary;
             }
         }
-
-        public static ThemeType ThemeType { get; set; } = ThemeType.Light;
-
+        public static object GetResource(ThemeResourceKey resourceKey)
+        {
+            return ResourceDictionary.Contains(resourceKey.ToString()) ?
+                ResourceDictionary[resourceKey.ToString()] : null;
+        }
+        internal static Color ColorFromHex(string colorHex)
+        {
+            return (Color?)ColorConverter.ConvertFromString(colorHex) ?? Colors.Transparent;
+        }
+        internal static void SetResource(object key, object resource)
+        {
+            ResourceDictionary[key] = resource;
+        }
         private static void LoadThemeType(ThemeType type)
         {
             ThemeType = type;
@@ -37,22 +47,6 @@ namespace Mohsenmou.UI.WPF
                 default:
                     break;
             }
-        }
-
-        public static object GetResource(ThemeResourceKey resourceKey)
-        {
-            return ResourceDictionary.Contains(resourceKey.ToString()) ? 
-                ResourceDictionary[resourceKey.ToString()] : null;
-        }
-
-        internal static void SetResource(object key,object resource)
-        {
-            ResourceDictionary[key] = resource;
-        }
-
-        internal static Color ColorFromHex(string colorHex)
-        {
-            return (Color?)ColorConverter.ConvertFromString(colorHex) ?? Colors.Transparent;
         }
     }
 }
