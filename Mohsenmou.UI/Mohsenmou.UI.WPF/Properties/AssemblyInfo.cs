@@ -6,7 +6,7 @@ using System.Windows.Markup;
 [assembly: AssemblyTitle("Mohsenmou.UI.WPF")]
 [assembly: AssemblyDescription("A library of reusable styles, themes, icons, controls, and other UI helpers.")]
 [assembly: AssemblyConfiguration("Release")]
-[assembly: AssemblyCompany("Mohsenmou")]
+[assembly: AssemblyCompany("Mohsen Mousavi")]
 [assembly: AssemblyProduct("Mohsenmou.UI.WPF")]
 [assembly: AssemblyCopyright("Copyright ©  2019 Mohsenmou")]
 [assembly: AssemblyTrademark("")]

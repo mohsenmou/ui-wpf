@@ -65,6 +65,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="Mohsenmou.UI.WPF.nuspec" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -86,4 +87,10 @@
     </Page>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>if $(ConfigurationName) == Release (
+    nuget pack "$(ProjectPath)" -Properties Configuration=Release
+    xcopy "$(TargetDir)*.nupkg" "D:\mohsenmou\ui-wpf\Mohsenmou.UI\Mohsenmou.UI.WPF" /C /Y
+)</PostBuildEvent>
+  </PropertyGroup>
 </Project>

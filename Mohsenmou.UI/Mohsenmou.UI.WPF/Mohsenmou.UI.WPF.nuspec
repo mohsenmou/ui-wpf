@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>$author$</authors>
+    <owners>$author$</owners>
+    <projectUrl>https://github.com/mohsenmou/ui-wpf</projectUrl>
+    <iconUrl>https://github.com/mohsenmou/ui-wpf</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>$description$</description>
+    <releaseNotes></releaseNotes>
+    <copyright>Copyright 2019 Mohsen</copyright>
+    <tags>WPF Toolkit, UI Design, Custom Control, Theme Support</tags>
+  </metadata>
+</package>
