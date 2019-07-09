@@ -1,4 +1,4 @@
-﻿namespace Mohsenmou.UI.WPF.Themes
+﻿namespace Mohsenmou.UI.WPF
 {
     public enum ThemeType
     {
