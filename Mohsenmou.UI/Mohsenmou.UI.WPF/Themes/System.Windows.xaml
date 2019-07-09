@@ -4,5 +4,6 @@
         <ResourceDictionary Source="Styles/CheckBoxStyles.xaml" />
         <ResourceDictionary Source="Styles/ComboBoxStyles.xaml" />
         <ResourceDictionary Source="Styles/GroupBoxStyles.xaml" />
+        <ResourceDictionary Source="Styles/TextBoxStyles.xaml" />
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>
