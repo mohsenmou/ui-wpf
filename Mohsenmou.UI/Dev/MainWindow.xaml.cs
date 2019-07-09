@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Mohsenmou.UI.WPF;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,13 @@ namespace Dev
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void OnClick(object sender, RoutedEventArgs e)
+        {
+            var theme = Theme.ThemeType == ThemeType.Light ?
+                ThemeType.Dark : ThemeType.Light;
+            Theme.LoadThemeType(theme);
         }
     }
 }

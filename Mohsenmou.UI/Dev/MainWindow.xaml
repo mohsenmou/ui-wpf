@@ -1,13 +1,24 @@
 ﻿<Window x:Class="Dev.MainWindow"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mui="https://github.com/mohsenmou/ui-wpf"
     Title="MainWindow"
     Width="800"
     Height="450">
-    <Grid>
+    <Grid Background="{mui:ThemeResource ResourceKey=ContentBackground}">
         <Button
+            Margin="8"
+            Padding="8,0"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Top"
+            Content="Switch Theme"
+            IsDefault="True"
+            Click="OnClick"/>
+        <TextBlock
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
-            Content="Should be red!" />
+            FontSize="16"
+            Foreground="{mui:ThemeResource ResourceKey=ContentForeground}"
+            Text="This is a sample" />
     </Grid>
 </Window>
