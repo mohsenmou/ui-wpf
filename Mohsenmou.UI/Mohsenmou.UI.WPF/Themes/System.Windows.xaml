@@ -5,5 +5,6 @@
         <ResourceDictionary Source="Styles/ComboBoxStyles.xaml" />
         <ResourceDictionary Source="Styles/GroupBoxStyles.xaml" />
         <ResourceDictionary Source="Styles/TextBoxStyles.xaml" />
+        <ResourceDictionary Source="Styles/WindowStyles.xaml" />
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>
