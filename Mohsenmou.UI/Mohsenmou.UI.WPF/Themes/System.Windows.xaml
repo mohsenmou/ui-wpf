@@ -3,5 +3,6 @@
         <ResourceDictionary Source="Styles/ButtonStyles.xaml" />
         <ResourceDictionary Source="Styles/CheckBoxStyles.xaml" />
         <ResourceDictionary Source="Styles/ComboBoxStyles.xaml" />
+        <ResourceDictionary Source="Styles/GroupBoxStyles.xaml" />
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>
