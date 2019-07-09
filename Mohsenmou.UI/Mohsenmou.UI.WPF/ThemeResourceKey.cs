@@ -2,5 +2,7 @@
 {
     public enum ThemeResourceKey
     {
+        ContentBackground,
+        ContentForeground
     }
 }

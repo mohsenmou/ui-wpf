@@ -35,16 +35,22 @@ namespace Mohsenmou.UI.WPF
         {
             ResourceDictionary[key] = resource;
         }
-        private static void LoadThemeType(ThemeType type)
+        public static void LoadThemeType(ThemeType type)
         {
             ThemeType = type;
             switch (type)
             {
                 case ThemeType.Light:
+                    SetResource(ThemeResourceKey.ContentBackground.ToString(),
+                        new SolidColorBrush(ColorFromHex("#FFFFFFFF")));
+                    SetResource(ThemeResourceKey.ContentForeground.ToString(),
+                        new SolidColorBrush(ColorFromHex("#FF000000")));
                     break;
                 case ThemeType.Dark:
-                    break;
-                default:
+                    SetResource(ThemeResourceKey.ContentBackground.ToString(),
+                        new SolidColorBrush(ColorFromHex("#FF000000")));
+                    SetResource(ThemeResourceKey.ContentForeground.ToString(),
+                        new SolidColorBrush(ColorFromHex("#FFFFFFFF")));
                     break;
             }
         }
