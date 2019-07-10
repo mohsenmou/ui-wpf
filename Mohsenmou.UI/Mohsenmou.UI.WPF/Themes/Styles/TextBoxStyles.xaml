@@ -1,6 +1,7 @@
 ﻿<ResourceDictionary
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:ap="clr-namespace:Mohsenmou.UI.WPF.AttachedProperties"
     xmlns:theme="clr-namespace:Mohsenmou.UI.WPF">
 
     <ControlTemplate x:Key="TextBoxTemplate" TargetType="{x:Type TextBox}">
@@ -9,12 +10,23 @@
             BorderBrush="{TemplateBinding BorderBrush}"
             BorderThickness="{TemplateBinding BorderThickness}"
             SnapsToDevicePixels="True">
-            <ScrollViewer x:Name="PART_ContentHost"
-                Focusable="false"
-                HorizontalScrollBarVisibility="Hidden"
-                VerticalScrollBarVisibility="Hidden" />
+            <Grid>
+                <ScrollViewer x:Name="PART_ContentHost"
+                    Focusable="false"
+                    HorizontalScrollBarVisibility="Hidden"
+                    VerticalScrollBarVisibility="Hidden" />
+                <TextBlock x:Name="PART_Watermark"
+                    Padding="4,0,0,0"
+                    FontStyle="Italic"
+                    Opacity="0.7"
+                    Text="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(ap:TextBoxHelper.Watermark)}"
+                    Visibility="Collapsed" />
+            </Grid>
         </Border>
         <ControlTemplate.Triggers>
+            <Trigger Property="Text" Value="">
+                <Setter TargetName="PART_Watermark" Property="Visibility" Value="Visible" />
+            </Trigger>
             <Trigger Property="IsEnabled" Value="false">
                 <Setter TargetName="border" Property="Opacity" Value="{theme:ThemeResource ResourceKey=ControlDisabledOpacity}" />
             </Trigger>
