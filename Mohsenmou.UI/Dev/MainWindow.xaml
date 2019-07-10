@@ -38,6 +38,30 @@
             <CheckBox
                 Margin="0,8"
                 Content="Check Box" />
+            <ComboBox Margin="0,8">
+                <ComboBoxItem
+                    Content="Item 1"
+                    IsSelected="True" />
+                <ComboBoxItem
+                    Content="Item 2"
+                    IsSelected="True" />
+                <ComboBoxItem
+                    Content="Item 3"
+                    IsSelected="True" />
+            </ComboBox>
+            <ComboBox
+                Margin="0,8"
+                IsEditable="True">
+                <ComboBoxItem
+                    Content="Item 1"
+                    IsSelected="True" />
+                <ComboBoxItem
+                    Content="Item 2"
+                    IsSelected="True" />
+                <ComboBoxItem
+                    Content="Item 3"
+                    IsSelected="True" />
+            </ComboBox>
         </StackPanel>
     </Grid>
 </Window>
