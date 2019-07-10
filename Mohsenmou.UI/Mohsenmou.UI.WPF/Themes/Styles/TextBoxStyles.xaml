@@ -1,7 +1,9 @@
-﻿<ResourceDictionary
+﻿<ResourceDictionary x:Class="Mohsenmou.UI.WPF.ButtonStyles"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:ap="clr-namespace:Mohsenmou.UI.WPF.AttachedProperties"
+    xmlns:controls="clr-namespace:Mohsenmou.UI.WPF.Controls"
+    xmlns:converters="clr-namespace:Mohsenmou.UI.WPF.Converters"
     xmlns:theme="clr-namespace:Mohsenmou.UI.WPF">
 
     <ControlTemplate x:Key="TextBoxTemplate" TargetType="{x:Type TextBox}">
@@ -11,6 +13,10 @@
             BorderThickness="{TemplateBinding BorderThickness}"
             SnapsToDevicePixels="True">
             <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
                 <ScrollViewer x:Name="PART_ContentHost"
                     Focusable="false"
                     HorizontalScrollBarVisibility="Hidden"
@@ -21,11 +27,19 @@
                     Opacity="0.7"
                     Text="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(ap:TextBoxHelper.Watermark)}"
                     Visibility="Collapsed" />
+                <Button x:Name="PART_ClearTextButton"
+                    Grid.Column="1"
+                    Click="OnClearTextClick"
+                    Style="{DynamicResource ClearButtonStyle}"
+                    Visibility="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(ap:TextBoxHelper.ClearTextButton), Converter={converters:BoolToVisibilityFlexConverter}}">
+                    <controls:XamlImage Template="{DynamicResource Icon_Close}" />
+                </Button>
             </Grid>
         </Border>
         <ControlTemplate.Triggers>
             <Trigger Property="Text" Value="">
                 <Setter TargetName="PART_Watermark" Property="Visibility" Value="Visible" />
+                <Setter TargetName="PART_ClearTextButton" Property="Visibility" Value="Collapsed" />
             </Trigger>
             <Trigger Property="IsEnabled" Value="false">
                 <Setter TargetName="border" Property="Opacity" Value="{theme:ThemeResource ResourceKey=ControlDisabledOpacity}" />
@@ -45,7 +59,7 @@
         <Setter Property="Foreground" Value="{theme:ThemeResource ResourceKey=ControlForeground}" />
         <Setter Property="SelectionBrush" Value="{theme:ThemeResource ResourceKey=ControlHighlightBackground}" />
         <Setter Property="CaretBrush" Value="{theme:ThemeResource ResourceKey=ControlForeground}" />
-        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="BorderThickness" Value="2" />
         <Setter Property="KeyboardNavigation.TabNavigation" Value="None" />
         <Setter Property="HorizontalContentAlignment" Value="Left" />
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />

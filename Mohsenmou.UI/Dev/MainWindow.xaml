@@ -70,7 +70,9 @@
                 </ComboBox>
                 <TextBox
                     Margin="0,8"
-                    Text="TextBox" mui:TextBoxHelper.Watermark="Please enter some text" />
+                    mui:TextBoxHelper.ClearTextButton="True"
+                    mui:TextBoxHelper.Watermark="Please enter some text"
+                    Text="TextBox" />
                 <WrapPanel
                     Margin="0,8,0,0"
                     Orientation="Horizontal">

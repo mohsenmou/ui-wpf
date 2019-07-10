@@ -71,6 +71,7 @@
     <Compile Include="ThemeResourceDictionary.cs" />
     <Compile Include="ThemeResourceExtension.cs" />
     <Compile Include="ThemeResourceKey.cs" />
+    <Compile Include="Themes\Styles\ButtonStyles.cs" />
     <Compile Include="Themes\Styles\WindowStyles.cs" />
     <Compile Include="ThemeType.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
