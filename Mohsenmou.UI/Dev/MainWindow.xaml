@@ -11,9 +11,9 @@
             Padding="8,0"
             HorizontalAlignment="Right"
             VerticalAlignment="Top"
+            Click="OnClick"
             Content="Switch Theme"
-            IsDefault="True"
-            Click="OnClick"/>
+            IsDefault="True" />
         <TextBlock
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
