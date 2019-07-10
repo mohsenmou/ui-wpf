@@ -18,4 +18,5 @@ using System.Windows.Markup;
 [assembly: XmlnsDefinition("https://github.com/mohsenmou/ui-wpf", "Mohsenmou.UI.WPF")]
 [assembly: XmlnsDefinition("https://github.com/mohsenmou/ui-wpf", "Mohsenmou.UI.WPF.Controls")]
 [assembly: XmlnsDefinition("https://github.com/mohsenmou/ui-wpf", "Mohsenmou.UI.WPF.Converters")]
+[assembly: XmlnsDefinition("https://github.com/mohsenmou/ui-wpf", "Mohsenmou.UI.WPF.AttachedProperties")]
 

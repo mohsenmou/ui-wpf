@@ -5,9 +5,9 @@
     Title="MainWindow"
     Width="800"
     Height="450"
-    Icon="{Binding Path=XamlImageKey, Converter={mui:XamlImageKeyToImageSourceConverter ForegroundResourceKey=WindowHeaderForeground, Height=16, Width=16}}"
-    Style="{DynamicResource MainWindowStyle}"
-    FontFamily="Segoe UI Light">
+    FontFamily="Segoe UI Light"
+    Icon="{Binding Path=Icon_TeRex, Converter={mui:XamlImageKeyToImageSourceConverter ForegroundResourceKey=WindowHeaderForeground, Height=16, Width=16}}"
+    Style="{DynamicResource MainWindowStyle}">
     <Grid Background="{mui:ThemeResource ResourceKey=ContentBackground}">
         <CheckBox x:Name="EnabledInput"
             Margin="8"
@@ -17,14 +17,15 @@
             IsChecked="True" />
         <Button
             Margin="8"
-            Padding="8,0"
+            Padding="8,4"
             HorizontalAlignment="Right"
             VerticalAlignment="Top"
+            mui:ButtonProperties.CornerRadius="2"
             Click="OnClick"
             Content="Switch Theme"
             IsDefault="True" />
         <GroupBox
-            Width="200"
+            Width="300"
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
             Header="GroupBox"
