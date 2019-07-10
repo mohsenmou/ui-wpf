@@ -21,47 +21,51 @@
             Click="OnClick"
             Content="Switch Theme"
             IsDefault="True" />
-        <StackPanel
+        <GroupBox
+            Width="200"
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
+            Header="GroupBox"
             IsEnabled="{Binding ElementName=EnabledInput, Path=IsChecked}">
-            <TextBlock
-                Margin="0,8"
-                HorizontalAlignment="Center"
-                VerticalAlignment="Center"
-                FontSize="16"
-                Foreground="{mui:ThemeResource ResourceKey=ContentForeground}"
-                Text="This is a sample" />
-            <Button
-                Margin="0,8"
-                Content="Button" />
-            <CheckBox
-                Margin="0,8"
-                Content="Check Box" />
-            <ComboBox Margin="0,8">
-                <ComboBoxItem
-                    Content="Item 1"
-                    IsSelected="True" />
-                <ComboBoxItem
-                    Content="Item 2"
-                    IsSelected="True" />
-                <ComboBoxItem
-                    Content="Item 3"
-                    IsSelected="True" />
-            </ComboBox>
-            <ComboBox
-                Margin="0,8"
-                IsEditable="True">
-                <ComboBoxItem
-                    Content="Item 1"
-                    IsSelected="True" />
-                <ComboBoxItem
-                    Content="Item 2"
-                    IsSelected="True" />
-                <ComboBoxItem
-                    Content="Item 3"
-                    IsSelected="True" />
-            </ComboBox>
-        </StackPanel>
+            <StackPanel HorizontalAlignment="Center">
+                <TextBlock
+                    Margin="0,8"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    FontSize="16"
+                    Foreground="{mui:ThemeResource ResourceKey=ContentForeground}"
+                    Text="This is a sample" />
+                <Button
+                    Margin="0,8"
+                    Content="Button" />
+                <CheckBox
+                    Margin="0,8"
+                    Content="Check Box" />
+                <ComboBox Margin="0,8">
+                    <ComboBoxItem
+                        Content="Item 1"
+                        IsSelected="True" />
+                    <ComboBoxItem
+                        Content="Item 2"
+                        IsSelected="True" />
+                    <ComboBoxItem
+                        Content="Item 3"
+                        IsSelected="True" />
+                </ComboBox>
+                <ComboBox
+                    Margin="0,8"
+                    IsEditable="True">
+                    <ComboBoxItem
+                        Content="Item 1"
+                        IsSelected="True" />
+                    <ComboBoxItem
+                        Content="Item 2"
+                        IsSelected="True" />
+                    <ComboBoxItem
+                        Content="Item 3"
+                        IsSelected="True" />
+                </ComboBox>
+            </StackPanel>
+        </GroupBox>
     </Grid>
 </Window>
