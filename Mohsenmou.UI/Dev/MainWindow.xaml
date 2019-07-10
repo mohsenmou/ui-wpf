@@ -4,7 +4,8 @@
     xmlns:mui="https://github.com/mohsenmou/ui-wpf"
     Title="MainWindow"
     Width="800"
-    Height="450">
+    Height="450"
+    FontFamily="Segoe UI Light">
     <Grid Background="{mui:ThemeResource ResourceKey=ContentBackground}">
         <CheckBox x:Name="EnabledInput"
             Margin="8"
@@ -34,6 +35,9 @@
             <Button
                 Margin="0,8"
                 Content="Button" />
+            <CheckBox
+                Margin="0,8"
+                Content="Check Box" />
         </StackPanel>
     </Grid>
 </Window>
