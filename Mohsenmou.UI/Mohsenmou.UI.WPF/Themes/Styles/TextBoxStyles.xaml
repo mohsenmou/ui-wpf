@@ -22,13 +22,14 @@
                     HorizontalScrollBarVisibility="Hidden"
                     VerticalScrollBarVisibility="Hidden" />
                 <TextBlock x:Name="PART_Watermark"
-                    Padding="4,0,0,0"
+                    Padding="{TemplateBinding Padding}"
                     FontStyle="Italic"
                     Opacity="0.7"
                     Text="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(ap:TextBoxHelper.Watermark)}"
                     Visibility="Collapsed" />
                 <Button x:Name="PART_ClearTextButton"
                     Grid.Column="1"
+                    Margin="4,2"
                     Click="OnClearTextClick"
                     Style="{DynamicResource ClearButtonStyle}"
                     Visibility="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(ap:TextBoxHelper.ClearTextButton), Converter={converters:BoolToVisibilityFlexConverter}}">
@@ -59,7 +60,8 @@
         <Setter Property="Foreground" Value="{theme:ThemeResource ResourceKey=ControlForeground}" />
         <Setter Property="SelectionBrush" Value="{theme:ThemeResource ResourceKey=ControlHighlightBackground}" />
         <Setter Property="CaretBrush" Value="{theme:ThemeResource ResourceKey=ControlForeground}" />
-        <Setter Property="BorderThickness" Value="2" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="Padding" Value="6,4,0,4" />
         <Setter Property="KeyboardNavigation.TabNavigation" Value="None" />
         <Setter Property="HorizontalContentAlignment" Value="Left" />
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />

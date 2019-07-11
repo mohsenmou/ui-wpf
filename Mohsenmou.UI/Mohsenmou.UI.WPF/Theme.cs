@@ -8,7 +8,7 @@ namespace Mohsenmou.UI.WPF
     {
         [ThreadStatic]
         private static ResourceDictionary resourceDictionary;
-        public static ThemeType ThemeType { get; set; } = ThemeType.Light;
+        public static ThemeType ThemeType { get; set; } = ThemeType.Dark;
         internal static ResourceDictionary ResourceDictionary
         {
             get
@@ -52,54 +52,137 @@ namespace Mohsenmou.UI.WPF
         {
             ThemeType = type;
 
-            SetResource(ThemeResourceKey.ControlDisabledOpacity.ToString(), 0.4d);
-            SetResource(ThemeResourceKey.ControlDefaultBorder.ToString(), new SolidColorBrush(ColorFromHex("#FFC12B68")));
-            SetResource(ThemeResourceKey.ControlMouseOverBorder.ToString(), new SolidColorBrush(ColorFromHex("#FFA53289")));
-            SetResource(ThemeResourceKey.ControlFocusBorder.ToString(), new SolidColorBrush(ColorFromHex("#FF833AB4")));
-            SetResource(ThemeResourceKey.ListMouseOverBackground.ToString(), new SolidColorBrush(ColorFromHex("#22833AB4")));
-            SetResource(ThemeResourceKey.ListMouseOverBorder.ToString(), new SolidColorBrush(ColorFromHex("#FFA53289")));
-            SetResource(ThemeResourceKey.ListSelectedBackground.ToString(), new SolidColorBrush(ColorFromHex("#FF833AB4")));
-            SetResource(ThemeResourceKey.ListSelectedBorder.ToString(), new SolidColorBrush(ColorFromHex("#FFA53289")));
-            SetResource(ThemeResourceKey.ListSelectedForeground.ToString(), new SolidColorBrush(ColorFromHex("#FFFFFFFF")));
-            SetResource(ThemeResourceKey.WindowBorder.ToString(), new SolidColorBrush(ColorFromHex("#FF616D7B")));
-            SetResource(ThemeResourceKey.WindowActiveBorder.ToString(), new SolidColorBrush(ColorFromHex("#FF833AB4")));
-            SetResource(ThemeResourceKey.WindowControlMouseOverBackground.ToString(), new SolidColorBrush(ColorFromHex("#FF000000")));
-            SetResource(ThemeResourceKey.WindowHeaderBackground.ToString(), GetWindowHeaderGradient());
-            SetResource(ThemeResourceKey.WindowHeaderForeground.ToString(), new SolidColorBrush(ColorFromHex("#FFFFFFFF")));
-
             switch (type)
             {
                 case ThemeType.Light:
-                    SetResource(ThemeResourceKey.ContentBackground.ToString(), new SolidColorBrush(ColorFromHex("#FFFFFFFF")));
-                    SetResource(ThemeResourceKey.ContentForeground.ToString(), new SolidColorBrush(ColorFromHex("#FF3F3F3F")));
-                    SetResource(ThemeResourceKey.ControlForeground.ToString(), new SolidColorBrush(ColorFromHex("#FF3F3F3F")));
-                    SetResource(ThemeResourceKey.ControlBackground.ToString(), new SolidColorBrush(ColorFromHex("#FFDBE0E4")));
-                    SetResource(ThemeResourceKey.ControlBorder.ToString(), new SolidColorBrush(ColorFromHex("#FF8192A1")));
-                    SetResource(ThemeResourceKey.ControlContentBackground.ToString(), new SolidColorBrush(ColorFromHex("#FFFFFFFF")));
-                    SetResource(ThemeResourceKey.ControlHighlightBackground.ToString(), new SolidColorBrush(ColorFromHex("#77833AB4")));
-                    SetResource(ThemeResourceKey.ControlMouseOverBackground.ToString(), new SolidColorBrush(ColorFromHex("#FFEDEFF2")));
-                    SetResource(ThemeResourceKey.ControlPressedBackground.ToString(), new SolidColorBrush(ColorFromHex("#FFBFC2C4")));
-                    SetResource(ThemeResourceKey.ControlPressedBorder.ToString(), new SolidColorBrush(ColorFromHex("#FF3CC0FF")));
-                    SetResource(ThemeResourceKey.GlyphForeground.ToString(), new SolidColorBrush(ColorFromHex("#FF646769")));
-                    SetResource(ThemeResourceKey.GroupBoxHeaderBorder.ToString(), new SolidColorBrush(ColorFromHex("#FFA53289")));
-                    SetResource(ThemeResourceKey.GroupBoxHeaderForeground.ToString(), new SolidColorBrush(ColorFromHex("#FFA53289")));
+                    InitializeLightTheme(Colors.DarkOrange);
                     break;
                 case ThemeType.Dark:
-                    SetResource(ThemeResourceKey.ContentBackground.ToString(), new SolidColorBrush(ColorFromHex("#FF222529")));
-                    SetResource(ThemeResourceKey.ContentForeground.ToString(), new SolidColorBrush(ColorFromHex("#FFF4F6F9")));
-                    SetResource(ThemeResourceKey.ControlForeground.ToString(), new SolidColorBrush(ColorFromHex("#FFF4F6F9")));
-                    SetResource(ThemeResourceKey.ControlBackground.ToString(), new SolidColorBrush(ColorFromHex("#FF2D3136")));
-                    SetResource(ThemeResourceKey.ControlBorder.ToString(), new SolidColorBrush(ColorFromHex("#FF616D7B")));
-                    SetResource(ThemeResourceKey.ControlContentBackground.ToString(), new SolidColorBrush(ColorFromHex("#FF1C1E22")));
-                    SetResource(ThemeResourceKey.ControlHighlightBackground.ToString(), new SolidColorBrush(ColorFromHex("#FF833AB4")));
-                    SetResource(ThemeResourceKey.ControlMouseOverBackground.ToString(), new SolidColorBrush(ColorFromHex("#FF4C525E")));
-                    SetResource(ThemeResourceKey.ControlPressedBackground.ToString(), new SolidColorBrush(ColorFromHex("#FF222529")));
-                    SetResource(ThemeResourceKey.ControlPressedBorder.ToString(), new SolidColorBrush(ColorFromHex("#FF00ACE0")));
-                    SetResource(ThemeResourceKey.GlyphForeground.ToString(), new SolidColorBrush(ColorFromHex("#FFEBECED")));
-                    SetResource(ThemeResourceKey.GroupBoxHeaderBorder.ToString(), new SolidColorBrush(ColorFromHex("#FFBF399E")));
-                    SetResource(ThemeResourceKey.GroupBoxHeaderForeground.ToString(), new SolidColorBrush(ColorFromHex("#FFBF399E")));
+                    InitializeDarkTheme(Colors.Orange);
                     break;
             }
         }
+        private static void InitializeLightTheme(Color accentColor,
+                                                 string backgroundColor = "#FFFFFFFF",
+                                                 string foregroundColor = "#FF3F3F3F")
+        {
+            //Set resource for disabled controls
+            SetResource(ThemeResourceKey.ControlDisabledOpacity.ToString(), 0.8d);
+
+            //Set window resource keys
+            SetResource(ThemeResourceKey.WindowHeaderBackground.ToString(), new SolidColorBrush(ColorFromHex(backgroundColor)));
+            SetResource(ThemeResourceKey.WindowHeaderForeground.ToString(), new SolidColorBrush(ColorFromHex(foregroundColor)));
+            SetResource(ThemeResourceKey.WindowControlMouseOverBackground.ToString(), new SolidColorBrush(ColorHelper.GetColorLighter(accentColor, 0.1)));
+            SetResource(ThemeResourceKey.WindowBorder.ToString(), new SolidColorBrush(ColorHelper.GetColorLighter(accentColor, 0.2)));
+            SetResource(ThemeResourceKey.WindowActiveBorder.ToString(), new SolidColorBrush(ColorHelper.GetColorLighter(accentColor, 1)));
+
+            //Set content resource Keys
+            SetResource(ThemeResourceKey.ContentBackground.ToString(), new SolidColorBrush(ColorFromHex(backgroundColor)));
+            SetResource(ThemeResourceKey.ContentForeground.ToString(), new SolidColorBrush(ColorFromHex(foregroundColor)));
+
+            //Set controls resource Keys  
+
+            //controls default state
+            SetResource(ThemeResourceKey.ControlDefaultBorder.ToString(), new SolidColorBrush(ColorHelper.GetColorLighter(accentColor, 0.9)));
+
+            //controls focus state
+            SetResource(ThemeResourceKey.ControlFocusBorder.ToString(), new SolidColorBrush(ColorHelper.GetColorDarker(accentColor, 0.9))); 
+            
+            //controls content 
+            SetResource(ThemeResourceKey.ControlContentBackground.ToString(), new SolidColorBrush(ColorFromHex(backgroundColor)));
+
+            //controls highlight states
+            SetResource(ThemeResourceKey.ControlHighlightBackground.ToString(), new SolidColorBrush(ColorHelper.GetColorLighter(accentColor, 0.7)));
+
+            //controls default states
+            SetResource(ThemeResourceKey.ControlBackground.ToString(), new SolidColorBrush(ColorFromHex(backgroundColor)));
+            SetResource(ThemeResourceKey.ControlBorder.ToString(), new SolidColorBrush(ColorHelper.GetColorLighter(accentColor, 0.2)));
+            SetResource(ThemeResourceKey.ControlForeground.ToString(), new SolidColorBrush(ColorFromHex(foregroundColor)));
+
+            //controls mouse over states
+            SetResource(ThemeResourceKey.ControlMouseOverBackground.ToString(), new SolidColorBrush(ColorHelper.GetColorLighter(accentColor,0.1)));
+            SetResource(ThemeResourceKey.ControlMouseOverBorder.ToString(), new SolidColorBrush(ColorHelper.GetColorLighter(accentColor, 0.2)));
+
+            //controls pressed states
+            SetResource(ThemeResourceKey.ControlPressedBackground.ToString(), new SolidColorBrush(ColorHelper.GetColorLighter(accentColor, 0.2)));
+            SetResource(ThemeResourceKey.ControlPressedBorder.ToString(), new SolidColorBrush(ColorHelper.GetColorLighter(accentColor, 0.3)));
+
+
+            //Set Lists resource keys
+            SetResource(ThemeResourceKey.ListMouseOverBackground.ToString(), new SolidColorBrush(ColorHelper.GetColorLighter(accentColor, 0.1)));
+            SetResource(ThemeResourceKey.ListMouseOverBorder.ToString(), new SolidColorBrush(ColorHelper.GetColorLighter(accentColor, 0.2)));
+            SetResource(ThemeResourceKey.ListSelectedBackground.ToString(), new SolidColorBrush(ColorHelper.GetColorLighter(accentColor, 0.2)));
+            SetResource(ThemeResourceKey.ListSelectedBorder.ToString(), new SolidColorBrush(ColorHelper.GetColorLighter(accentColor, 0.3)));
+            SetResource(ThemeResourceKey.ListSelectedForeground.ToString(), new SolidColorBrush(ColorFromHex(foregroundColor)));
+
+            //Set glyph resource Keys
+            SetResource(ThemeResourceKey.GlyphForeground.ToString(), new SolidColorBrush(ColorFromHex(foregroundColor)));
+
+            //Set groupbox  resource Keys
+            SetResource(ThemeResourceKey.GroupBoxHeaderBorder.ToString(), new SolidColorBrush(ColorHelper.GetColorLighter(accentColor, 1)));
+            SetResource(ThemeResourceKey.GroupBoxHeaderForeground.ToString(), new SolidColorBrush(ColorHelper.GetColorLighter(accentColor, 1)));
+        }
+        private static void InitializeDarkTheme(Color accentColor,
+                                                string backgroundColor = "#FF222529",
+                                                string foregroundColor = "#FFF4F6F9")
+        {
+            //Set resource for disabled controls
+            SetResource(ThemeResourceKey.ControlDisabledOpacity.ToString(), 0.7d);
+
+            //Set window resource keys
+            SetResource(ThemeResourceKey.WindowHeaderBackground.ToString(), new SolidColorBrush(ColorFromHex(backgroundColor)));
+            SetResource(ThemeResourceKey.WindowHeaderForeground.ToString(), new SolidColorBrush(ColorFromHex(foregroundColor)));
+            SetResource(ThemeResourceKey.WindowControlMouseOverBackground.ToString(), new SolidColorBrush(ColorHelper.GetColorDarker(accentColor, 0.8)));
+            SetResource(ThemeResourceKey.WindowBorder.ToString(), new SolidColorBrush(ColorHelper.GetColorDarker(accentColor, 0.2)));
+            SetResource(ThemeResourceKey.WindowActiveBorder.ToString(), new SolidColorBrush(ColorHelper.GetColorDarker(accentColor, 1)));
+
+            //Set content resource Keys
+            SetResource(ThemeResourceKey.ContentBackground.ToString(), new SolidColorBrush(ColorFromHex(backgroundColor)));
+            SetResource(ThemeResourceKey.ContentForeground.ToString(), new SolidColorBrush(ColorFromHex(foregroundColor)));
+
+            //Set controls resource Keys  
+
+            //controls default state
+            SetResource(ThemeResourceKey.ControlDefaultBorder.ToString(), new SolidColorBrush(ColorHelper.GetColorLighter(accentColor, 0.9)));
+
+            //controls focus state
+            SetResource(ThemeResourceKey.ControlFocusBorder.ToString(), new SolidColorBrush(ColorHelper.GetColorDarker(accentColor, 1)));
+
+            //controls content 
+            SetResource(ThemeResourceKey.ControlContentBackground.ToString(), new SolidColorBrush(ColorFromHex(backgroundColor)));
+
+            //controls highlight states
+            SetResource(ThemeResourceKey.ControlHighlightBackground.ToString(), new SolidColorBrush(ColorHelper.GetColorLighter(accentColor, 0.7)));
+
+            //controls default states
+            SetResource(ThemeResourceKey.ControlBackground.ToString(), new SolidColorBrush(ColorFromHex(backgroundColor)));
+            SetResource(ThemeResourceKey.ControlBorder.ToString(), new SolidColorBrush(ColorHelper.GetColorDarker(accentColor, 0.9)));
+            SetResource(ThemeResourceKey.ControlForeground.ToString(), new SolidColorBrush(ColorFromHex(foregroundColor)));
+
+            //controls mouse over states
+            SetResource(ThemeResourceKey.ControlMouseOverBackground.ToString(), new SolidColorBrush(ColorHelper.GetColorDarker(accentColor, 0.8)));
+            SetResource(ThemeResourceKey.ControlMouseOverBorder.ToString(), new SolidColorBrush(ColorHelper.GetColorDarker(accentColor, 0.9)));
+
+            //controls pressed states
+            SetResource(ThemeResourceKey.ControlPressedBackground.ToString(), new SolidColorBrush(ColorHelper.GetColorLighter(accentColor, 0.7)));
+            SetResource(ThemeResourceKey.ControlPressedBorder.ToString(), new SolidColorBrush(ColorHelper.GetColorLighter(accentColor, 0.8)));
+
+
+            //Set Lists resource keys
+            SetResource(ThemeResourceKey.ListMouseOverBackground.ToString(), new SolidColorBrush(ColorHelper.GetColorDarker(accentColor, 0.9)));
+            SetResource(ThemeResourceKey.ListMouseOverBorder.ToString(), new SolidColorBrush(ColorHelper.GetColorDarker(accentColor, 0.8)));
+            SetResource(ThemeResourceKey.ListSelectedBackground.ToString(), new SolidColorBrush(ColorHelper.GetColorDarker(accentColor, 0.8)));
+            SetResource(ThemeResourceKey.ListSelectedBorder.ToString(), new SolidColorBrush(ColorHelper.GetColorDarker(accentColor, 0.7)));
+            SetResource(ThemeResourceKey.ListSelectedForeground.ToString(), new SolidColorBrush(ColorFromHex(foregroundColor)));
+
+            //Set glyph resource Keys
+            SetResource(ThemeResourceKey.GlyphForeground.ToString(), new SolidColorBrush(ColorFromHex(foregroundColor)));
+
+            //Set groupbox resource Keys
+            SetResource(ThemeResourceKey.GroupBoxHeaderBorder.ToString(), new SolidColorBrush(ColorHelper.GetColorDarker(accentColor, 0.9)));
+            SetResource(ThemeResourceKey.GroupBoxHeaderForeground.ToString(), new SolidColorBrush(ColorHelper.GetColorDarker(accentColor, 0.9)));
+        }
+
+
     }
 }
