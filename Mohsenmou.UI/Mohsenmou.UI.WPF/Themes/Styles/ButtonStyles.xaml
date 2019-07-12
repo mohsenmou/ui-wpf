@@ -2,6 +2,8 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:ap="clr-namespace:Mohsenmou.UI.WPF.AttachedProperties"
+    xmlns:controls="clr-namespace:Mohsenmou.UI.WPF.Controls"
+    xmlns:converters="clr-namespace:Mohsenmou.UI.WPF.Converters"
     xmlns:theme="clr-namespace:Mohsenmou.UI.WPF">
 
     <ControlTemplate x:Key="ButtonTemplate" TargetType="{x:Type Button}">
@@ -11,13 +13,26 @@
                 BorderBrush="{TemplateBinding BorderBrush}"
                 BorderThickness="{TemplateBinding BorderThickness}"
                 CornerRadius="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(ap:ButtonProperties.CornerRadius)}">
-                <ContentPresenter x:Name="contentPresenter"
-                    Margin="{TemplateBinding Padding}"
-                    HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                    VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                    Focusable="False"
-                    RecognizesAccessKey="True"
-                    SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <controls:XamlImage
+                        MaxWidth="16"
+                        MaxHeight="16"
+                        Margin="8,0,0,0"
+                        Template="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(ap:ButtonProperties.Icon)}"
+                        Visibility="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(ap:ButtonProperties.ShowIcon), Converter={converters:BoolToVisibilityFlexConverter}}" />
+                    <ContentPresenter x:Name="contentPresenter"
+                        Grid.Column="1"
+                        Margin="{TemplateBinding Padding}"
+                        HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                        VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                        Focusable="False"
+                        RecognizesAccessKey="True"
+                        SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                </Grid>
             </Border>
             <Border x:Name="FocusBorder"
                 BorderBrush="{theme:ThemeResource ResourceKey=ControlFocusBorder}"
@@ -56,7 +71,7 @@
         <Setter Property="VerticalContentAlignment" Value="Center" />
         <Setter Property="UseLayoutRounding" Value="False" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
-        <Setter Property="Padding" Value="8,4" />
+        <Setter Property="Padding" Value="0,4,8,4" />
         <Setter Property="ap:ButtonProperties.CornerRadius" Value="0" />
         <Setter Property="Template" Value="{StaticResource ButtonTemplate}" />
     </Style>

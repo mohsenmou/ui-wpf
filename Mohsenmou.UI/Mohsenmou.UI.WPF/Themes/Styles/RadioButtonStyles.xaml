@@ -25,6 +25,7 @@
                     <Ellipse x:Name="optionMark"
                         MinWidth="6"
                         MinHeight="6"
+                        Margin="2"
                         Fill="{theme:ThemeResource ResourceKey=GlyphForeground}"
                         Opacity="0" />
                 </Grid>
@@ -35,6 +36,8 @@
                 BorderBrush="{theme:ThemeResource ResourceKey=ControlFocusBorder}"
                 BorderThickness="1"
                 CornerRadius="100"
+                SnapsToDevicePixels="True"
+                UseLayoutRounding="True"
                 Visibility="Collapsed" />
             <ContentPresenter x:Name="contentPresenter"
                 Grid.Column="1"

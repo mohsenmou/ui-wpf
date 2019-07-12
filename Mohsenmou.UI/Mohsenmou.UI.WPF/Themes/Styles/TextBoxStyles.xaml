@@ -41,6 +41,7 @@
             <Trigger Property="Text" Value="">
                 <Setter TargetName="PART_Watermark" Property="Visibility" Value="Visible" />
                 <Setter TargetName="PART_ClearTextButton" Property="Visibility" Value="Collapsed" />
+                <Setter Property="Cursor" Value="IBeam" />
             </Trigger>
             <Trigger Property="IsEnabled" Value="false">
                 <Setter TargetName="border" Property="Opacity" Value="{theme:ThemeResource ResourceKey=ControlDisabledOpacity}" />

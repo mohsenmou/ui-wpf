@@ -18,11 +18,36 @@
                     <RadioButton
                         Margin="5"
                         Content="Radio Button 1" />
-                    <RadioButton Margin="5" Content="Radio Button 2" />
-                    <RadioButton Margin="5" Content="Radio Button 3" />
-                    <RadioButton Margin="5" Content="Radio Button 4" />
+                    <RadioButton
+                        Margin="5"
+                        Content="Radio Button 2" />
+                    <RadioButton
+                        Margin="5"
+                        Content="Radio Button 3" />
+                    <RadioButton
+                        Margin="5"
+                        Content="Radio Button 4" />
                     <CheckBox Margin="5">CheckBox 1</CheckBox>
                     <CheckBox Margin="5">CheckBox 2</CheckBox>
+
+                    <TextBlock Margin="5,5,5,0" Text="Enter Username:"/>
+                    <TextBox
+                        Width="150"
+                        Margin="5"
+                        HorizontalAlignment="Left"
+                        mui:TextBoxHelper.ClearTextButton="True"
+                        mui:TextBoxHelper.Watermark="Username" />
+                    
+                    <Button
+                        Width="85"
+                        Margin="5"
+                        HorizontalAlignment="Left"
+                        mui:ButtonProperties.Icon="{DynamicResource Icon_TeRex}"
+                        mui:ButtonProperties.ShowIcon="True">
+                        Submit
+                    </Button>
+
+         
                 </StackPanel>
             </TabItem>
             <TabItem Header="Item 2">
