@@ -83,8 +83,8 @@
                     SelectionStart="50"
                     Value="50" />
                 <ListBox
-                    Height="100"
-                    ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                    Height="200"
+                    ScrollViewer.HorizontalScrollBarVisibility="Disabled"
                     ScrollViewer.VerticalScrollBarVisibility="Auto">
                     <ListBoxItem>Item 1</ListBoxItem>
                     <ListBoxItem>Item 2</ListBoxItem>
@@ -93,7 +93,6 @@
                     <ListBoxItem>Item 5</ListBoxItem>
                     <ListBoxItem>Item 6</ListBoxItem>
                     <ListBoxItem>Item 7</ListBoxItem>
-                    <ListBoxItem>Item 8, This is long list item that can not be wrapped into two list items</ListBoxItem>
                 </ListBox>
             </StackPanel>
         </GroupBox>

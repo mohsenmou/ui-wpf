@@ -55,10 +55,10 @@ namespace Mohsenmou.UI.WPF
             switch (type)
             {
                 case ThemeType.Light:
-                    InitializeLightTheme(Colors.DarkRed);
+                    InitializeLightTheme(Colors.DarkOliveGreen);
                     break;
                 case ThemeType.Dark:
-                    InitializeDarkTheme(Colors.DarkRed);
+                    InitializeDarkTheme(Colors.DarkOrange);
                     break;
             }
         }
