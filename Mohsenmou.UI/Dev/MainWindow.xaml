@@ -9,7 +9,10 @@
     FontSize="14"
     Icon="{Binding Path=Icon_TeRex, Converter={mui:XamlImageKeyToImageSourceConverter ForegroundResourceKey=WindowHeaderForeground, Height=16, Width=16}}"
     Style="{DynamicResource MainWindowStyle}">
-    <Grid Background="{mui:ThemeResource ResourceKey=ContentBackground}">
+    <Grid
+        Background="{mui:ThemeResource ResourceKey=ContentBackground}"
+        ScrollViewer.HorizontalScrollBarVisibility="Auto"
+        ScrollViewer.VerticalScrollBarVisibility="Auto">
         <CheckBox x:Name="EnabledInput"
             Margin="8"
             HorizontalAlignment="Left"
@@ -29,7 +32,8 @@
                     IsDefault="False" />
                 <CheckBox x:Name="check"
                     Margin="0,8"
-                    Content="Check Box" IsChecked="True" />
+                    Content="Check Box"
+                    IsChecked="True" />
                 <ComboBox
                     Name="cbo"
                     Margin="0,8">
@@ -69,7 +73,7 @@
                     Minimum="0"
                     Value="50" />
                 <Slider
-                    Margin="0,8"          
+                    Margin="0,8"
                     IsSelectionRangeEnabled="True"
                     IsSnapToTickEnabled="True"
                     Maximum="100"
@@ -77,101 +81,21 @@
                     Orientation="Horizontal"
                     SelectionEnd="75"
                     SelectionStart="50"
-                   
-                   
                     Value="50" />
+                <ListBox
+                    Height="100"
+                    ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                    ScrollViewer.VerticalScrollBarVisibility="Auto">
+                    <ListBoxItem>Item 1</ListBoxItem>
+                    <ListBoxItem>Item 2</ListBoxItem>
+                    <ListBoxItem>Item 3</ListBoxItem>
+                    <ListBoxItem>Item 4</ListBoxItem>
+                    <ListBoxItem>Item 5</ListBoxItem>
+                    <ListBoxItem>Item 6</ListBoxItem>
+                    <ListBoxItem>Item 7</ListBoxItem>
+                    <ListBoxItem>Item 8, This is long list item that can not be wrapped into two list items</ListBoxItem>
+                </ListBox>
             </StackPanel>
         </GroupBox>
-        <!--<GroupBox
-            Width="auto"
-            HorizontalAlignment="Center"
-            VerticalAlignment="Center"
-            Header="GroupBox"
-            IsEnabled="{Binding ElementName=EnabledInput, Path=IsChecked}">
-            <StackPanel HorizontalAlignment="Center">
-                <TextBlock
-                    Margin="0,8"
-                    HorizontalAlignment="Center"
-                    VerticalAlignment="Center"
-                    FontSize="16"
-                    Foreground="{mui:ThemeResource ResourceKey=ContentForeground}"
-                    Text="This is a sample" />
-                <Button
-                    Margin="0,8"
-                    Content="Button" />
-                <CheckBox
-                    Margin="0,8"
-                    Content="Check Box" />
-                <ComboBox Margin="0,8">
-                    <ComboBoxItem
-                        Content="Item 1"
-                        IsSelected="True" />
-                    <ComboBoxItem
-                        Content="Item 2"
-                        IsSelected="True" />
-                    <ComboBoxItem
-                        Content="Item 3"
-                        IsSelected="True" />
-                </ComboBox>
-                <ComboBox
-                    Margin="0,8"
-                    IsEditable="True">
-                    <ComboBoxItem
-                        Content="Item 1"
-                        IsSelected="True" />
-                    <ComboBoxItem
-                        Content="Item 2"
-                        IsSelected="True" />
-                    <ComboBoxItem
-                        Content="Item 3"
-                        IsSelected="True" />
-                </ComboBox>
-                <TextBox
-                    Margin="0,8"
-                    mui:TextBoxHelper.ClearTextButton="True"
-                    mui:TextBoxHelper.Watermark="Please enter some text"
-                    Text="TextBox" />
-                <WrapPanel
-                    Margin="0,8,0,0"
-                    Orientation="Horizontal">
-                    <WrapPanel.Resources>
-                        <Style TargetType="{x:Type mui:XamlImage}">
-                            <Setter Property="Width" Value="24" />
-                            <Setter Property="Height" Value="24" />
-                            <Setter Property="Foreground" Value="{mui:ThemeResource ResourceKey=GlyphForeground}" />
-                        </Style>
-                    </WrapPanel.Resources>
-                    <mui:XamlImage Template="{DynamicResource Icon_Add}" />
-                    <mui:XamlImage Template="{DynamicResource Icon_Close}" />
-                    <mui:XamlImage Template="{DynamicResource Icon_Delete}" />
-                    <mui:XamlImage Template="{DynamicResource Icon_Expand}" />
-                    <mui:XamlImage Template="{DynamicResource Icon_Logo}" />
-                    <mui:XamlImage Template="{DynamicResource Icon_Maximize}" />
-                    <mui:XamlImage Template="{DynamicResource Icon_Minimize}" />
-                    <mui:XamlImage Template="{DynamicResource Icon_Restore}" />
-                    <mui:XamlImage Template="{DynamicResource Icon_TeRex}" />
-                    <mui:XamlImage Template="{DynamicResource Icon_Theme}" />
-                </WrapPanel>
-                <StackPanel
-                    Height="24"
-                    Margin="0,8,0,0"
-                    Orientation="Horizontal">
-                    <CheckBox x:Name="ValueInput"
-                        VerticalAlignment="Center"
-                        Content="BoolToVisibilityFlexConverter"
-                        IsChecked="True" />
-                    <Border
-                        Width="24"
-                        Height="24"
-                        Margin="16,0,0,0"
-                        Background="Red"
-                        Visibility="{Binding ElementName=ValueInput, Path=IsChecked, Converter={mui:BoolToVisibilityFlexConverter IsInverse=True}}">
-                        <mui:XamlImage
-                            Foreground="{mui:ThemeResource ResourceKey=WindowHeaderForeground}"
-                            Template="{DynamicResource Icon_TeRex}" />
-                    </Border>
-                </StackPanel>
-            </StackPanel>
-        </GroupBox>-->
     </Grid>
 </Window>

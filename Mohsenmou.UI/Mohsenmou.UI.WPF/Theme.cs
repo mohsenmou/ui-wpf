@@ -55,10 +55,10 @@ namespace Mohsenmou.UI.WPF
             switch (type)
             {
                 case ThemeType.Light:
-                    InitializeLightTheme(Colors.DarkOrchid);
+                    InitializeLightTheme(Colors.DarkRed);
                     break;
                 case ThemeType.Dark:
-                    InitializeDarkTheme(Colors.DarkOrange);
+                    InitializeDarkTheme(Colors.DarkRed);
                     break;
             }
         }
@@ -96,16 +96,16 @@ namespace Mohsenmou.UI.WPF
 
             //controls default states
             SetResource(ThemeResourceKey.ControlBackground.ToString(), new SolidColorBrush(ColorFromHex(backgroundColor)));
-            SetResource(ThemeResourceKey.ControlBorder.ToString(), new SolidColorBrush(ColorHelper.GetColorLighter(accentColor, 0.2)));
+            SetResource(ThemeResourceKey.ControlBorder.ToString(), new SolidColorBrush(ColorHelper.GetColorLighter(accentColor, 0.3)));
             SetResource(ThemeResourceKey.ControlForeground.ToString(), new SolidColorBrush(ColorFromHex(foregroundColor)));
 
             //controls mouse over states
-            SetResource(ThemeResourceKey.ControlMouseOverBackground.ToString(), new SolidColorBrush(ColorHelper.GetColorLighter(accentColor,0.1)));
-            SetResource(ThemeResourceKey.ControlMouseOverBorder.ToString(), new SolidColorBrush(ColorHelper.GetColorLighter(accentColor, 0.2)));
+            SetResource(ThemeResourceKey.ControlMouseOverBackground.ToString(), new SolidColorBrush(ColorHelper.GetColorLighter(accentColor,0.2)));
+            SetResource(ThemeResourceKey.ControlMouseOverBorder.ToString(), new SolidColorBrush(ColorHelper.GetColorLighter(accentColor, 0.3)));
 
             //controls pressed states
-            SetResource(ThemeResourceKey.ControlPressedBackground.ToString(), new SolidColorBrush(ColorHelper.GetColorLighter(accentColor, 0.2)));
-            SetResource(ThemeResourceKey.ControlPressedBorder.ToString(), new SolidColorBrush(ColorHelper.GetColorLighter(accentColor, 0.3)));
+            SetResource(ThemeResourceKey.ControlPressedBackground.ToString(), new SolidColorBrush(ColorHelper.GetColorLighter(accentColor, 0.3)));
+            SetResource(ThemeResourceKey.ControlPressedBorder.ToString(), new SolidColorBrush(ColorHelper.GetColorLighter(accentColor, 0.4)));
 
 
             //Set Lists resource keys
