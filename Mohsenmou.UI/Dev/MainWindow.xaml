@@ -21,6 +21,24 @@
             <TabItem Header="Item 3">
                 <TextBlock Margin="5">This is content of item #3</TextBlock>
             </TabItem>
+            <TabItem Header="Item 4">
+                <TextBlock Margin="5">This is content of item #4</TextBlock>
+            </TabItem>
+            <TabItem Header="Item 5">
+                <TextBlock Margin="5">This is content of item #5</TextBlock>
+            </TabItem>
+            <TabItem Header="Item 6">
+                <TextBlock Margin="5">This is content of item #6</TextBlock>
+            </TabItem>
+            <TabItem Header="Item 7">
+                <TextBlock Margin="5">This is content of item #7</TextBlock>
+            </TabItem>
+            <TabItem Header="Item 8">
+                <TextBlock Margin="5">This is content of item #8</TextBlock>
+            </TabItem>
+            <TabItem Header="Item 9">
+                <TextBlock Margin="5">This is content of item #9</TextBlock>
+            </TabItem>
         </TabControl>
 
     </Grid>

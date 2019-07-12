@@ -156,7 +156,7 @@
 
     <Style BasedOn="{StaticResource ScrollBarStyle}" TargetType="{x:Type ScrollBar}" />
 
-    <ControlTemplate x:Key="ScrollViewerControlTemplate" TargetType="{x:Type ScrollViewer}">
+    <ControlTemplate x:Key="ScrollViewerTemplate" TargetType="{x:Type ScrollViewer}">
         <Grid x:Name="Grid"
             Background="{TemplateBinding Background}">
             <Grid.ColumnDefinitions>
@@ -206,9 +206,160 @@
 
     <Style x:Key="ScrollViewerStyle" TargetType="{x:Type ScrollViewer}">
         <Setter Property="Background" Value="Transparent" />
-        <Setter Property="Template" Value="{StaticResource ScrollViewerControlTemplate}" />
+        <Setter Property="Template" Value="{StaticResource ScrollViewerTemplate}" />
     </Style>
 
     <Style BasedOn="{StaticResource ScrollViewerStyle}" TargetType="{x:Type ScrollViewer}" />
+
+    <Style x:Key="TabControlScrollBarButton" TargetType="{x:Type RepeatButton}">
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Padding" Value="1" />
+        <Setter Property="Focusable" Value="false" />
+        <Setter Property="IsTabStop" Value="false" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type RepeatButton}">
+                    <Border Background="{theme:ThemeResource ResourceKey=ControlBackground}">
+                        <ContentPresenter x:Name="contentPresenter"
+                            Margin="{TemplateBinding Padding}"
+                            HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                            VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                            Focusable="False"
+                            SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter Property="Cursor" Value="Hand" />
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter TargetName="contentPresenter" Property="Opacity" Value="{theme:ThemeResource ResourceKey=ControlDisabledOpacity}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <ControlTemplate x:Key="TabControlHorizontalScrollBar" TargetType="{x:Type ScrollBar}">
+        <Grid x:Name="Bg"
+            SnapsToDevicePixels="true">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition MaxWidth="20" />
+                <ColumnDefinition Width="0.00001*" />
+                <ColumnDefinition MaxWidth="20" />
+            </Grid.ColumnDefinitions>
+            <RepeatButton x:Name="PART_LineLeftButton"
+                Command="{x:Static ScrollBar.LineLeftCommand}"
+                IsEnabled="{TemplateBinding IsMouseOver}"
+                Style="{StaticResource TabControlScrollBarButton}">
+                <Path x:Name="ArrowLeft"
+                    Width="12"
+                    Height="12"
+                    Margin="3"
+                    Data="M15.854048,0L17.272997,1.4100033 2.8199543,15.950011 17.351,30.587004 15.932051,31.996001 0,15.949004z"
+                    Fill="{theme:ThemeResource ResourceKey=GlyphForeground}"
+                    Stretch="Uniform"
+                    Stroke="{theme:ThemeResource ResourceKey=GlyphForeground}" />
+            </RepeatButton>
+            <RepeatButton x:Name="PART_LineRightButton"
+                Grid.Column="2"
+                Command="{x:Static ScrollBar.LineRightCommand}"
+                IsEnabled="{TemplateBinding IsMouseOver}"
+                Style="{StaticResource TabControlScrollBarButton}">
+                <Path x:Name="ArrowRight"
+                    Width="12"
+                    Height="12"
+                    Margin="3"
+                    Data="M1.4200482,0L17.351001,16.046996 1.4980513,31.996001 0.078979631,30.585997 14.531046,16.046019 0,1.4089964z"
+                    Fill="{theme:ThemeResource ResourceKey=GlyphForeground}"
+                    Stretch="Uniform"
+                    Stroke="{theme:ThemeResource ResourceKey=GlyphForeground}" />
+            </RepeatButton>
+        </Grid>
+        <ControlTemplate.Triggers>
+            <MultiDataTrigger>
+                <MultiDataTrigger.Conditions>
+                    <Condition Binding="{Binding IsMouseOver, ElementName=PART_LineRightButton}" Value="true" />
+                    <Condition Binding="{Binding IsPressed, ElementName=PART_LineRightButton}" Value="true" />
+                </MultiDataTrigger.Conditions>
+                <Setter TargetName="ArrowRight" Property="Fill" Value="{theme:ThemeResource ResourceKey=GlyphForeground}" />
+            </MultiDataTrigger>
+            <MultiDataTrigger>
+                <MultiDataTrigger.Conditions>
+                    <Condition Binding="{Binding IsMouseOver, ElementName=PART_LineLeftButton}" Value="true" />
+                    <Condition Binding="{Binding IsPressed, ElementName=PART_LineLeftButton}" Value="true" />
+                </MultiDataTrigger.Conditions>
+                <Setter TargetName="ArrowLeft" Property="Fill" Value="{theme:ThemeResource ResourceKey=GlyphForeground}" />
+            </MultiDataTrigger>
+            <MultiDataTrigger>
+                <MultiDataTrigger.Conditions>
+                    <Condition Binding="{Binding IsMouseOver, ElementName=PART_LineRightButton}" Value="true" />
+                    <Condition Binding="{Binding IsPressed, ElementName=PART_LineRightButton}" Value="false" />
+                </MultiDataTrigger.Conditions>
+                <Setter TargetName="ArrowRight" Property="Fill" Value="{theme:ThemeResource ResourceKey=GlyphForeground}" />
+            </MultiDataTrigger>
+            <MultiDataTrigger>
+                <MultiDataTrigger.Conditions>
+                    <Condition Binding="{Binding IsMouseOver, ElementName=PART_LineLeftButton}" Value="true" />
+                    <Condition Binding="{Binding IsPressed, ElementName=PART_LineLeftButton}" Value="false" />
+                </MultiDataTrigger.Conditions>
+                <Setter TargetName="ArrowLeft" Property="Fill" Value="{theme:ThemeResource ResourceKey=GlyphForeground}" />
+            </MultiDataTrigger>
+            <Trigger Property="IsEnabled" Value="false">
+                <Setter TargetName="ArrowLeft" Property="Opacity" Value="{theme:ThemeResource ResourceKey=ControlDisabledOpacity}" />
+                <Setter TargetName="ArrowRight" Property="Opacity" Value="{theme:ThemeResource ResourceKey=ControlDisabledOpacity}" />
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+    <ControlTemplate x:Key="TabControlScrollViewerTemplate" TargetType="{x:Type ScrollViewer}">
+        <Grid x:Name="Grid"
+            Background="{TemplateBinding Background}">
+            <ScrollContentPresenter x:Name="PART_ScrollContentPresenter"
+                Margin="{TemplateBinding Padding}"
+                CanContentScroll="{TemplateBinding CanContentScroll}"
+                CanHorizontallyScroll="False"
+                CanVerticallyScroll="False"
+                Content="{TemplateBinding Content}"
+                ContentTemplate="{TemplateBinding ContentTemplate}" />
+            <ScrollBar x:Name="PART_HorizontalScrollBar"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Center"
+                VerticalContentAlignment="Center"
+                AutomationProperties.AutomationId="HorizontalScrollBar"
+                Cursor="Arrow"
+                Maximum="{TemplateBinding ScrollableWidth}"
+                Minimum="0"
+                Orientation="Horizontal"
+                Style="{DynamicResource TabControlScrollBarStyle}"
+                ViewportSize="{TemplateBinding ViewportWidth}"
+                Visibility="{TemplateBinding ComputedHorizontalScrollBarVisibility}"
+                Value="{Binding HorizontalOffset, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}" />
+        </Grid>
+        <ControlTemplate.Triggers>
+            <Trigger SourceName="PART_HorizontalScrollBar" Property="Visibility" Value="Visible">
+                <Setter TargetName="PART_ScrollContentPresenter" Property="Margin" Value="21,0" />
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+    <Style x:Key="TabControlScrollBarStyle" TargetType="{x:Type ScrollBar}">
+        <Setter Property="Stylus.IsPressAndHoldEnabled" Value="false" />
+        <Setter Property="Stylus.IsFlicksEnabled" Value="false" />
+        <Setter Property="Background" Value="{theme:ThemeResource ResourceKey=ControlBackground}" />
+        <Setter Property="BorderBrush" Value="{theme:ThemeResource ResourceKey=ControlBorder}" />
+        <Setter Property="Foreground" Value="{theme:ThemeResource ResourceKey=ControlForeground}" />
+        <Setter Property="Orientation" Value="Horizontal" />
+        <Setter Property="Width" Value="Auto" />
+        <Setter Property="Height" Value="Auto" />
+        <Setter Property="BorderThickness" Value="0,1" />
+        <Setter Property="Template" Value="{StaticResource TabControlHorizontalScrollBar}" />
+    </Style>
+    <Style x:Key="TabControlScrollViewerStyle" TargetType="{x:Type ScrollViewer}">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Template" Value="{StaticResource TabControlScrollViewerTemplate}" />
+    </Style>
 
 </ResourceDictionary>

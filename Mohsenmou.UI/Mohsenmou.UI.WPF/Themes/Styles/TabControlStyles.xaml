@@ -79,17 +79,22 @@
             ClipToBounds="true"
             KeyboardNavigation.TabNavigation="Local"
             SnapsToDevicePixels="true">
-
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
                 <RowDefinition />
             </Grid.RowDefinitions>
-            <TabPanel x:Name="headerPanel"
-                Margin="2,2,2,0"
-                Panel.ZIndex="1"
-                Background="Transparent"
-                IsItemsHost="true"
-                KeyboardNavigation.TabIndex="1" />
+            <ScrollViewer
+                Focusable="False"
+                HorizontalScrollBarVisibility="Auto"
+                Style="{DynamicResource TabControlScrollViewerStyle}"
+                VerticalScrollBarVisibility="Disabled">
+                <TabPanel x:Name="headerPanel"
+                    Margin="2,2,2,0"
+                    Panel.ZIndex="1"
+                    Background="Transparent"
+                    IsItemsHost="true"
+                    KeyboardNavigation.TabIndex="1" />
+            </ScrollViewer>
             <Border x:Name="contentPanel"
                 Grid.Row="1"
                 Background="{TemplateBinding Background}"
