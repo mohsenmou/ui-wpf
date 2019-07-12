@@ -61,15 +61,7 @@
                     mui:TextBoxHelper.ClearTextButton="True"
                     mui:TextBoxHelper.Watermark="Username"
                     Text="TextBox" />
-                <TextBlock
-                    Margin="0,8"
-                    Text="{Binding ElementName=cbo, Path=ActualHeight}" />
-                <TextBlock
-                    Margin="0,8"
-                    Text="{Binding ElementName=editCbo, Path=ActualHeight}" />
-                <TextBlock
-                    Margin="0,8"
-                    Text="{Binding ElementName=txt, Path=ActualHeight}" />
+                <ProgressBar Margin="0,8" Minimum="0" Maximum="100" Value="50" IsIndeterminate="True"/>
             </StackPanel>
         </GroupBox>
         <!--<GroupBox

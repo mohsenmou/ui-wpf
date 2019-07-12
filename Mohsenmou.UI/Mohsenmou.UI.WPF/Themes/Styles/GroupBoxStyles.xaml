@@ -43,6 +43,7 @@
         <Setter Property="Padding" Value="8,16,8,8" />
         <Setter Property="Template" Value="{StaticResource GroupBoxTemplate}" />
     </Style>
+    
     <Style BasedOn="{StaticResource GroupBoxStyle}" TargetType="{x:Type GroupBox}" />
 
 </ResourceDictionary>
