@@ -12,7 +12,8 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
             <Border x:Name="radioButtonBorder"
-                Margin="1,1,2,1"
+                MinWidth="16"
+                MinHeight="16"
                 HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                 VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
                 Background="{TemplateBinding Background}"
@@ -28,6 +29,13 @@
                         Opacity="0" />
                 </Grid>
             </Border>
+            <Border x:Name="FocusBorder"
+                Width="{Binding ElementName=radioButtonBorder, Path=ActualWidth}"
+                Height="{Binding ElementName=radioButtonBorder, Path=ActualHeight}"
+                BorderBrush="{theme:ThemeResource ResourceKey=ControlFocusBorder}"
+                BorderThickness="1"
+                CornerRadius="100"
+                Visibility="Collapsed" />
             <ContentPresenter x:Name="contentPresenter"
                 Grid.Column="1"
                 Margin="{TemplateBinding Padding}"
@@ -58,6 +66,9 @@
             </Trigger>
             <Trigger Property="IsChecked" Value="{x:Null}">
                 <Setter TargetName="optionMark" Property="Opacity" Value="0.56" />
+            </Trigger>
+            <Trigger Property="IsFocused" Value="true">
+                <Setter TargetName="FocusBorder" Property="Visibility" Value="Visible" />
             </Trigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>

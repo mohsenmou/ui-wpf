@@ -13,14 +13,16 @@
 
         <TabControl Margin="5">
             <TabItem Header="Item 1">
-                <StackPanel Margin="5,10,0,0">
+                <StackPanel Margin="5">
                     <TextBlock>This is content of item #1</TextBlock>
                     <RadioButton
-                        Margin="0,20,0,0"
+                        Margin="5"
                         Content="Radio Button 1" />
-                    <RadioButton Content="Radio Button 2" />
-                    <RadioButton Content="Radio Button 3" />
-                    <RadioButton Content="Radio Button 4" />
+                    <RadioButton Margin="5" Content="Radio Button 2" />
+                    <RadioButton Margin="5" Content="Radio Button 3" />
+                    <RadioButton Margin="5" Content="Radio Button 4" />
+                    <CheckBox Margin="5">CheckBox 1</CheckBox>
+                    <CheckBox Margin="5">CheckBox 2</CheckBox>
                 </StackPanel>
             </TabItem>
             <TabItem Header="Item 2">
