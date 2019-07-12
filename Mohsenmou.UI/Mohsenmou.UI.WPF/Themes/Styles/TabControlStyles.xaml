@@ -1,0 +1,128 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:theme="clr-namespace:Mohsenmou.UI.WPF">
+
+    <ControlTemplate x:Key="TabItemTemplate" TargetType="{x:Type TabItem}">
+        <Grid x:Name="templateRoot"
+            SnapsToDevicePixels="true">
+            <Border x:Name="mainBorder"
+                Margin="0"
+                Background="{TemplateBinding Background}"
+                BorderBrush="{TemplateBinding BorderBrush}"
+                BorderThickness="0">
+                <Border x:Name="innerBorder"
+                    Margin="0"
+                    Background="{theme:ThemeResource ResourceKey=ListSelectedBackground}"
+                    BorderBrush="{theme:ThemeResource ResourceKey=ListSelectedBorder}"
+                    BorderThickness="0"
+                    Opacity="0" />
+            </Border>
+            <ContentPresenter x:Name="contentPresenter"
+                Margin="{TemplateBinding Padding}"
+                HorizontalAlignment="{Binding HorizontalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"
+                VerticalAlignment="{Binding VerticalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"
+                ContentSource="Header"
+                Focusable="False"
+                RecognizesAccessKey="True"
+                SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+            <Border x:Name="FocusBorder"
+                BorderBrush="{theme:ThemeResource ResourceKey=ControlFocusBorder}"
+                BorderThickness="1"
+                Visibility="Collapsed" />
+        </Grid>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsFocused" Value="true">
+                <Setter TargetName="FocusBorder" Property="Visibility" Value="Visible" />
+            </Trigger>
+            <MultiDataTrigger>
+                <MultiDataTrigger.Conditions>
+                    <Condition Binding="{Binding IsMouseOver, RelativeSource={RelativeSource Self}}" Value="true" />
+                    <Condition Binding="{Binding TabStripPlacement, RelativeSource={RelativeSource AncestorType={x:Type TabControl}}}" Value="Top" />
+                </MultiDataTrigger.Conditions>
+                <Setter TargetName="mainBorder" Property="Background" Value="{theme:ThemeResource ResourceKey=ListMouseOverBackground}" />
+                <Setter TargetName="mainBorder" Property="BorderBrush" Value="{theme:ThemeResource ResourceKey=ListMouseOverBackground}" />
+            </MultiDataTrigger>
+            <MultiDataTrigger>
+                <MultiDataTrigger.Conditions>
+                    <Condition Binding="{Binding IsEnabled, RelativeSource={RelativeSource Self}}" Value="false" />
+                    <Condition Binding="{Binding TabStripPlacement, RelativeSource={RelativeSource AncestorType={x:Type TabControl}}}" Value="Top" />
+                </MultiDataTrigger.Conditions>
+                <Setter TargetName="contentPresenter" Property="Opacity" Value="{theme:ThemeResource ResourceKey=ControlDisabledOpacity}" />
+            </MultiDataTrigger>
+
+            <MultiDataTrigger>
+                <MultiDataTrigger.Conditions>
+                    <Condition Binding="{Binding IsSelected, RelativeSource={RelativeSource Self}}" Value="true" />
+                    <Condition Binding="{Binding TabStripPlacement, RelativeSource={RelativeSource AncestorType={x:Type TabControl}}}" Value="Top" />
+                </MultiDataTrigger.Conditions>
+                <Setter Property="Panel.ZIndex" Value="1" />
+                <Setter TargetName="innerBorder" Property="Opacity" Value="1" />
+            </MultiDataTrigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+    <Style x:Key="TabItemStyle" TargetType="{x:Type TabItem}">
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="Foreground" Value="{theme:ThemeResource ResourceKey=ControlForeground}" />
+        <Setter Property="Background" Value="{theme:ThemeResource ResourceKey=ContentBackground}" />
+        <Setter Property="BorderBrush" Value="{theme:ThemeResource ResourceKey=ControlBorder}" />
+        <Setter Property="Margin" Value="0" />
+        <Setter Property="Padding" Value="8,4" />
+        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+        <Setter Property="VerticalContentAlignment" Value="Stretch" />
+        <Setter Property="Template" Value="{StaticResource TabItemTemplate}" />
+    </Style>
+
+    <ControlTemplate x:Key="TabControlTemplate" TargetType="{x:Type TabControl}">
+        <Grid x:Name="templateRoot"
+            ClipToBounds="true"
+            KeyboardNavigation.TabNavigation="Local"
+            SnapsToDevicePixels="true">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <TabPanel x:Name="headerPanel"
+                Margin="2,2,2,0"
+                Panel.ZIndex="1"
+                Background="Transparent"
+                IsItemsHost="true"
+                KeyboardNavigation.TabIndex="1" />
+            <Border x:Name="contentPanel"
+                Grid.Row="1"
+                Background="{TemplateBinding Background}"
+                BorderBrush="{TemplateBinding BorderBrush}"
+                BorderThickness="{TemplateBinding BorderThickness}"
+                KeyboardNavigation.DirectionalNavigation="Contained"
+                KeyboardNavigation.TabIndex="2"
+                KeyboardNavigation.TabNavigation="Local">
+                <ContentPresenter x:Name="PART_SelectedContentHost"
+                    Margin="{TemplateBinding Padding}"
+                    ContentSource="SelectedContent"
+                    SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+            </Border>
+        </Grid>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsEnabled" Value="false">
+                <Setter TargetName="templateRoot" Property="Opacity" Value="{theme:ThemeResource ResourceKey=ControlDisabledOpacity}" />
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+    <Style x:Key="TabControlStyle" TargetType="{x:Type TabControl}">
+        <Setter Property="Padding" Value="2" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Background" Value="{theme:ThemeResource ResourceKey=ControlBackground}" />
+        <Setter Property="BorderBrush" Value="{theme:ThemeResource ResourceKey=ControlBorder}" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Foreground" Value="{theme:ThemeResource ResourceKey=ControlForeground}" />
+        <Setter Property="Template" Value="{StaticResource TabControlTemplate}" />
+    </Style>
+
+    <Style BasedOn="{StaticResource TabItemStyle}" TargetType="{x:Type TabItem}" />
+    <Style BasedOn="{StaticResource TabControlStyle}" TargetType="{x:Type TabControl}" />
+
+</ResourceDictionary>

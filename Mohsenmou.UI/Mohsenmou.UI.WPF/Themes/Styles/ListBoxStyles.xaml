@@ -5,17 +5,23 @@
 
 
     <ControlTemplate x:Key="ListBoxItemTemplate" TargetType="{x:Type ListBoxItem}">
-        <Border x:Name="Bd"
-            Padding="{TemplateBinding Padding}"
-            Background="{TemplateBinding Background}"
-            BorderBrush="{TemplateBinding BorderBrush}"
-            BorderThickness="{TemplateBinding BorderThickness}"
-            SnapsToDevicePixels="true">
-            <ContentPresenter
-                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
-        </Border>
+        <Grid>
+            <Border x:Name="Bd"
+                Padding="{TemplateBinding Padding}"
+                Background="{TemplateBinding Background}"
+                BorderBrush="{TemplateBinding BorderBrush}"
+                BorderThickness="{TemplateBinding BorderThickness}"
+                SnapsToDevicePixels="true">
+                <ContentPresenter
+                    HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                    VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                    SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+            </Border>
+            <Border x:Name="FocusBorder"
+                BorderBrush="{theme:ThemeResource ResourceKey=ControlFocusBorder}"
+                BorderThickness="1"
+                Visibility="Collapsed" />
+        </Grid>
         <ControlTemplate.Triggers>
             <MultiTrigger>
                 <MultiTrigger.Conditions>
@@ -43,6 +49,9 @@
             <Trigger Property="IsEnabled" Value="False">
                 <Setter TargetName="Bd" Property="Opacity" Value="{theme:ThemeResource ResourceKey=ControlDisabledOpacity}" />
             </Trigger>
+            <Trigger Property="IsFocused" Value="true">
+                <Setter TargetName="FocusBorder" Property="Visibility" Value="Visible" />
+            </Trigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
 
@@ -59,10 +68,6 @@
     </Style>
 
     <Style BasedOn="{StaticResource ListBoxItemStyle}" TargetType="{x:Type ListBoxItem}" />
-
-
-
-
 
     <ControlTemplate x:Key="ListBoxTemplate" TargetType="{x:Type ListBox}">
         <Border x:Name="Bd"

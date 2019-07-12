@@ -13,5 +13,6 @@
         <ResourceDictionary Source="Styles/SliderStyles.xaml" />
         <ResourceDictionary Source="Styles/ScrollBarStyles.xaml" />
         <ResourceDictionary Source="Styles/ListBoxStyles.xaml" />
+        <ResourceDictionary Source="Styles/TabControlStyles.xaml" />
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>
