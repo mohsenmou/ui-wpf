@@ -28,8 +28,8 @@
                 <Setter TargetName="grip" Property="Stroke" Value="{theme:ThemeResource ResourceKey=ControlPressedBorder}" />
             </Trigger>
             <Trigger Property="IsEnabled" Value="false">
-                <Setter TargetName="grip" Property="Fill" Value="{theme:ThemeResource ResourceKey=ControlDisabledOpacity}" />
-                <Setter TargetName="grip" Property="Stroke" Value="{theme:ThemeResource ResourceKey=ControlDisabledOpacity}" />
+                <Setter TargetName="grip" Property="Opacity" Value="{theme:ThemeResource ResourceKey=ControlDisabledOpacity}" />
+                <Setter TargetName="grip" Property="Opacity" Value="{theme:ThemeResource ResourceKey=ControlDisabledOpacity}" />
             </Trigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
@@ -58,8 +58,8 @@
                 <Setter TargetName="grip" Property="Stroke" Value="{theme:ThemeResource ResourceKey=ControlPressedBorder}" />
             </Trigger>
             <Trigger Property="IsEnabled" Value="false">
-                <Setter TargetName="grip" Property="Fill" Value="{theme:ThemeResource ResourceKey=ControlDisabledOpacity}" />
-                <Setter TargetName="grip" Property="Stroke" Value="{theme:ThemeResource ResourceKey=ControlDisabledOpacity}" />
+                <Setter TargetName="grip" Property="Opacity" Value="{theme:ThemeResource ResourceKey=ControlDisabledOpacity}" />
+                <Setter TargetName="grip" Property="Opacity" Value="{theme:ThemeResource ResourceKey=ControlDisabledOpacity}" />
             </Trigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
@@ -84,8 +84,8 @@
                 <Setter TargetName="grip" Property="Stroke" Value="{theme:ThemeResource ResourceKey=ControlPressedBorder}" />
             </Trigger>
             <Trigger Property="IsEnabled" Value="false">
-                <Setter TargetName="grip" Property="Fill" Value="{theme:ThemeResource ResourceKey=ControlDisabledOpacity}" />
-                <Setter TargetName="grip" Property="Stroke" Value="{theme:ThemeResource ResourceKey=ControlDisabledOpacity}" />
+                <Setter TargetName="grip" Property="Opacity" Value="{theme:ThemeResource ResourceKey=ControlDisabledOpacity}" />
+                <Setter TargetName="grip" Property="Opacity" Value="{theme:ThemeResource ResourceKey=ControlDisabledOpacity}" />
             </Trigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
@@ -110,8 +110,8 @@
                 <Setter TargetName="grip" Property="Stroke" Value="{theme:ThemeResource ResourceKey=ControlPressedBorder}" />
             </Trigger>
             <Trigger Property="IsEnabled" Value="false">
-                <Setter TargetName="grip" Property="Fill" Value="{theme:ThemeResource ResourceKey=ControlDisabledOpacity}" />
-                <Setter TargetName="grip" Property="Stroke" Value="{theme:ThemeResource ResourceKey=ControlDisabledOpacity}" />
+                <Setter TargetName="grip" Property="Opacity" Value="{theme:ThemeResource ResourceKey=ControlDisabledOpacity}" />
+                <Setter TargetName="grip" Property="Opacity" Value="{theme:ThemeResource ResourceKey=ControlDisabledOpacity}" />
             </Trigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
@@ -136,8 +136,8 @@
                 <Setter TargetName="grip" Property="Stroke" Value="{theme:ThemeResource ResourceKey=ControlPressedBorder}" />
             </Trigger>
             <Trigger Property="IsEnabled" Value="false">
-                <Setter TargetName="grip" Property="Fill" Value="{theme:ThemeResource ResourceKey=ControlDisabledOpacity}" />
-                <Setter TargetName="grip" Property="Stroke" Value="{theme:ThemeResource ResourceKey=ControlDisabledOpacity}" />
+                <Setter TargetName="grip" Property="Opacity" Value="{theme:ThemeResource ResourceKey=ControlDisabledOpacity}" />
+                <Setter TargetName="grip" Property="Opacity" Value="{theme:ThemeResource ResourceKey=ControlDisabledOpacity}" />
             </Trigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
@@ -166,8 +166,8 @@
                 <Setter TargetName="grip" Property="Stroke" Value="{theme:ThemeResource ResourceKey=ControlPressedBorder}" />
             </Trigger>
             <Trigger Property="IsEnabled" Value="false">
-                <Setter TargetName="grip" Property="Fill" Value="{theme:ThemeResource ResourceKey=ControlDisabledOpacity}" />
-                <Setter TargetName="grip" Property="Stroke" Value="{theme:ThemeResource ResourceKey=ControlDisabledOpacity}" />
+                <Setter TargetName="grip" Property="Opacity" Value="{theme:ThemeResource ResourceKey=ControlDisabledOpacity}" />
+                <Setter TargetName="grip" Property="Opacity" Value="{theme:ThemeResource ResourceKey=ControlDisabledOpacity}" />
             </Trigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>

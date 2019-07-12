@@ -27,9 +27,9 @@
                     Margin="0,8"
                     Content="BUTTON"
                     IsDefault="False" />
-                <CheckBox
+                <CheckBox x:Name="check"
                     Margin="0,8"
-                    Content="Check Box" />
+                    Content="Check Box" IsChecked="True" />
                 <ComboBox
                     Name="cbo"
                     Margin="0,8">
@@ -69,17 +69,16 @@
                     Minimum="0"
                     Value="50" />
                 <Slider
-                    Margin="0,8"
-                    Height="300"
+                    Margin="0,8"          
                     IsSelectionRangeEnabled="True"
                     IsSnapToTickEnabled="True"
                     Maximum="100"
                     Minimum="0"
-                    Orientation="Vertical"
+                    Orientation="Horizontal"
                     SelectionEnd="75"
                     SelectionStart="50"
-                    TickFrequency="5"
-                    TickPlacement="Both"
+                   
+                   
                     Value="50" />
             </StackPanel>
         </GroupBox>
