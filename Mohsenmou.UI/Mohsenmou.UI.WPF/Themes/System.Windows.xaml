@@ -10,5 +10,6 @@
         <ResourceDictionary Source="Styles/TextBoxStyles.xaml" />
         <ResourceDictionary Source="Styles/WindowStyles.xaml" />
         <ResourceDictionary Source="Styles/ProgressBarStyles.xaml" />
+        <ResourceDictionary Source="Styles/SliderStyles.xaml" />
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

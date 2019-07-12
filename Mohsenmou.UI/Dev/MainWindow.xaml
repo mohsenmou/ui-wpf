@@ -25,7 +25,8 @@
             <StackPanel>
                 <Button
                     Margin="0,8"
-                    Content="BUTTON" IsDefault="False" />
+                    Content="BUTTON"
+                    IsDefault="False" />
                 <CheckBox
                     Margin="0,8"
                     Content="Check Box" />
@@ -61,7 +62,25 @@
                     mui:TextBoxHelper.ClearTextButton="True"
                     mui:TextBoxHelper.Watermark="Username"
                     Text="TextBox" />
-                <ProgressBar Margin="0,8" Minimum="0" Maximum="100" Value="50" IsIndeterminate="True"/>
+                <ProgressBar
+                    Margin="0,8"
+                    IsIndeterminate="True"
+                    Maximum="100"
+                    Minimum="0"
+                    Value="50" />
+                <Slider
+                    Margin="0,8"
+                    Height="300"
+                    IsSelectionRangeEnabled="True"
+                    IsSnapToTickEnabled="True"
+                    Maximum="100"
+                    Minimum="0"
+                    Orientation="Vertical"
+                    SelectionEnd="75"
+                    SelectionStart="50"
+                    TickFrequency="5"
+                    TickPlacement="Both"
+                    Value="50" />
             </StackPanel>
         </GroupBox>
         <!--<GroupBox

@@ -55,7 +55,7 @@ namespace Mohsenmou.UI.WPF
             switch (type)
             {
                 case ThemeType.Light:
-                    InitializeLightTheme(Colors.DarkOrange);
+                    InitializeLightTheme(Colors.DarkOrchid);
                     break;
                 case ThemeType.Dark:
                     InitializeDarkTheme(Colors.DarkOrange);
@@ -146,7 +146,7 @@ namespace Mohsenmou.UI.WPF
             SetResource(ThemeResourceKey.ControlDefaultBorder.ToString(), new SolidColorBrush(ColorHelper.GetColorLighter(accentColor, 0.9)));
 
             //controls focus state
-            SetResource(ThemeResourceKey.ControlFocusBorder.ToString(), new SolidColorBrush(ColorHelper.GetColorDarker(accentColor, 1)));
+            SetResource(ThemeResourceKey.ControlFocusBorder.ToString(), new SolidColorBrush(ColorHelper.GetColorDarker(accentColor, 0.9)));
 
             //controls content 
             SetResource(ThemeResourceKey.ControlContentBackground.ToString(), new SolidColorBrush(ColorFromHex(backgroundColor)));
