@@ -51,7 +51,13 @@
     <Compile Include="AttachedProperties\ButtonProperties.cs" />
     <Compile Include="AttachedProperties\TextBoxHelper.cs" />
     <Compile Include="ColorHelper.cs" />
+    <Compile Include="Controls\AdornedControl.cs" />
+    <Compile Include="Controls\AdornerPlacement.cs" />
+    <Compile Include="Controls\Badged.cs" />
+    <Compile Include="Controls\BadgedAdorner.cs" />
+    <Compile Include="Controls\FrameworkElementAdorner.cs" />
     <Compile Include="Controls\XamlImage.cs" />
+    <Compile Include="Converters\BadgedConverter.cs" />
     <Compile Include="Converters\BoolToVisibilityFlexConverter.cs" />
     <Compile Include="Converters\ObjectToVisibilityConverter.cs" />
     <Compile Include="Converters\XamlImageKeyToImageSourceConverter.cs" />
@@ -80,6 +86,7 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="Mohsenmou.UI.WPF.nuspec" />
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -92,6 +99,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Themes\Mohsenmou.UI.WPF.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Styles\BadgedStyles.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
