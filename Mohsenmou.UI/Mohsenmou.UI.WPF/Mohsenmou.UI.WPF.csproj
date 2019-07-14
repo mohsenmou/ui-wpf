@@ -57,6 +57,7 @@
     <Compile Include="Controls\AdornerPlacement.cs" />
     <Compile Include="Controls\Badged.cs" />
     <Compile Include="Controls\BadgedAdorner.cs" />
+    <Compile Include="Controls\BadgedPlacement.cs" />
     <Compile Include="Controls\FrameworkElementAdorner.cs" />
     <Compile Include="Controls\XamlImage.cs" />
     <Compile Include="Converters\BadgedConverters.cs" />
