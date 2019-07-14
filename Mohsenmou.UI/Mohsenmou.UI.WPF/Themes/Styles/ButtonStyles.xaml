@@ -18,7 +18,7 @@
                         <ColumnDefinition Width="Auto" />
                         <ColumnDefinition />
                     </Grid.ColumnDefinitions>
-                    <controls:XamlImage
+                    <controls:XamlImage x:Name="icon"
                         MaxWidth="16"
                         MaxHeight="16"
                         Margin="8,0,0,0"
@@ -57,6 +57,9 @@
             </Trigger>
             <Trigger Property="IsEnabled" Value="false">
                 <Setter Property="Opacity" Value="{theme:ThemeResource ResourceKey=ControlDisabledOpacity}" />
+            </Trigger>
+            <Trigger SourceName="icon" Property="Visibility" Value="Collapsed">
+                <Setter Property="Padding" Value="8,4"/>
             </Trigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>

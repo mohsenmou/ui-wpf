@@ -57,6 +57,8 @@
                         IsBadgeSet="True">
                         <Button
                             Width="200"
+                            mui:ButtonProperties.Icon="{DynamicResource Icon_Expand}"
+                            mui:ButtonProperties.ShowIcon="True"
                             Content="Submit" />
                     </mui:Badged>
 
@@ -105,14 +107,31 @@
                 </StackPanel>
             </TabItem>
             <TabItem Header="Item 3">
-                <StackPanel Margin="5">
-                    <TextBlock Margin="5">This is content of item #3</TextBlock>
-                    <TreeView>
-                        <TreeViewItem Header="Item 1">
-                            <TreeViewItem Header="Sub Item1" />
-                        </TreeViewItem>
-                    </TreeView>
-                </StackPanel>
+
+                <Grid
+                    Margin="20"
+                    Background="Yellow">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto" />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <mui:Badged
+                        Badge="3"
+                        IsBadgeSet="True">
+                        <Button
+                            mui:ButtonProperties.Icon="{DynamicResource Icon_Delete}"
+                            mui:ButtonProperties.ShowIcon="True"
+                            Content="Submit" />
+                    </mui:Badged>
+                </Grid>
+
             </TabItem>
             <TabItem Header="Item 4">
                 <TextBlock Margin="5">This is content of item #4</TextBlock>
