@@ -37,35 +37,45 @@
                         Margin="5,5,5,0"
                         Text="Enter Username:" />
 
-                    <TextBox
-                        Width="150"
-                        Margin="5"
-                        HorizontalAlignment="Left"
-                        mui:TextBoxHelper.ClearTextButton="True"
-                        mui:TextBoxHelper.Watermark="Username" />
+                    <mui:Badged
+                        Margin="5" HorizontalAlignment="Left"
+                        Badge="{Binding ElementName=txt, Path=Text.Length}"
+                        IsBadgeSet="True">
+                        <TextBox x:Name="txt"
+                            Width="150"
+                            Margin="0,0,0,0"
+                            mui:TextBoxHelper.ClearTextButton="True"
+                            mui:TextBoxHelper.Watermark="Username" />
+                    </mui:Badged>
 
-                    <Button x:Name="btn"
+                    <mui:Badged
+                        Margin="5" HorizontalAlignment="Left"
+                        Badge="{Binding ElementName=txt, Path=Text.Length}"
+                        IsBadgeSet="True">
+                        <Button
+                            Width="200"
+                            Content="Submit" />
+                    </mui:Badged>
+
+
+                    <!--<Button x:Name="btn" HorizontalAlignment="Left"
                         Width="85"
                         Margin="5"
-                        HorizontalAlignment="Left"
                         mui:ButtonProperties.Icon="{DynamicResource Icon_TeRex}"
                         mui:ButtonProperties.ShowIcon="True"
                         Click="OnClick">
                         Submit
                     </Button>
 
-                    <mui:Badged
-                        Badge="{Binding ElementName=window, Path=Width}"
-                        IsBadgeSet="True">
-                        <Button
-                            Width="85"
-                            Margin="5,5,400,0"
-                            HorizontalAlignment="Left"
-                            mui:ButtonProperties.Icon="{DynamicResource Icon_Delete}"
-                            mui:ButtonProperties.ShowIcon="True">
-                            Submit
-                        </Button>
-                    </mui:Badged>
+
+                    <Button HorizontalAlignment="Left"
+                        Width="85"
+                        Margin="5,5,400,0"
+                        mui:ButtonProperties.Icon="{DynamicResource Icon_Delete}"
+                        mui:ButtonProperties.ShowIcon="True">
+                        Submit
+                    </Button>-->
+
 
                 </StackPanel>
             </TabItem>
