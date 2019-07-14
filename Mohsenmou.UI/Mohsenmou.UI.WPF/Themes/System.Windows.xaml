@@ -16,5 +16,6 @@
         <ResourceDictionary Source="Styles/TabControlStyles.xaml" />
         <ResourceDictionary Source="Styles/RadioButtonStyles.xaml" />
         <ResourceDictionary Source="Styles/BadgedStyles.xaml" />
+        <ResourceDictionary Source="Styles/AccordionStyles.xaml" />
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

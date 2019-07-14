@@ -38,7 +38,8 @@
                         Text="Enter Username:" />
 
                     <mui:Badged
-                        Margin="5" HorizontalAlignment="Left"
+                        Margin="5"
+                        HorizontalAlignment="Left"
                         Badge="{Binding ElementName=txt, Path=Text.Length}"
                         IsBadgeSet="True">
                         <TextBox x:Name="txt"
@@ -49,7 +50,8 @@
                     </mui:Badged>
 
                     <mui:Badged
-                        Margin="5" HorizontalAlignment="Left"
+                        Margin="5"
+                        HorizontalAlignment="Left"
                         Badge="{Binding ElementName=txt, Path=Text.Length}"
                         IsBadgeSet="True">
                         <Button
@@ -80,10 +82,42 @@
                 </StackPanel>
             </TabItem>
             <TabItem Header="Item 2">
-                <TextBlock Margin="5">This is content of item #2</TextBlock>
+                <StackPanel Margin="5">
+                    <TextBlock Margin="5">This is content of item #2</TextBlock>
+                    <mui:Accordion
+                        Width="200"
+                        Height="500"
+                        Margin="5"
+                        HorizontalAlignment="Left">
+                        <mui:AccordionItem
+                            Header="Item 1"
+                            Icon="{DynamicResource Icon_TeRex}"
+                            ShowIcon="True">
+                            <mui:AccordionItem Header="SubItem 1" />
+                            <mui:AccordionItem Header="SubItem 2" />
+                            <mui:AccordionItem Header="SubItem 3" />
+                            <mui:AccordionItem Header="SubItem 4" />
+                        </mui:AccordionItem>
+
+                        <mui:AccordionItem
+                            Header="Item 2"
+                            Icon="{DynamicResource Icon_Logo}"
+                            ShowIcon="True">
+                            <mui:AccordionItem Header="SubItem 1" />
+                            <mui:AccordionItem Header="SubItem 2" />
+                        </mui:AccordionItem>
+                    </mui:Accordion>
+                </StackPanel>
             </TabItem>
             <TabItem Header="Item 3">
-                <TextBlock Margin="5">This is content of item #3</TextBlock>
+                <StackPanel Margin="5">
+                    <TextBlock Margin="5">This is content of item #3</TextBlock>
+                    <TreeView>
+                        <TreeViewItem Header="Item 1">
+                            <TreeViewItem Header="Sub Item1" />
+                        </TreeViewItem>
+                    </TreeView>
+                </StackPanel>
             </TabItem>
             <TabItem Header="Item 4">
                 <TextBlock Margin="5">This is content of item #4</TextBlock>

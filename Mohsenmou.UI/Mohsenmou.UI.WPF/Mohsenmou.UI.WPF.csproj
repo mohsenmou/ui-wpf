@@ -51,6 +51,8 @@
     <Compile Include="AttachedProperties\ButtonProperties.cs" />
     <Compile Include="AttachedProperties\TextBoxHelper.cs" />
     <Compile Include="ColorHelper.cs" />
+    <Compile Include="Controls\Accordion.cs" />
+    <Compile Include="Controls\AccordionItem.cs" />
     <Compile Include="Controls\AdornedControl.cs" />
     <Compile Include="Controls\AdornerPlacement.cs" />
     <Compile Include="Controls\Badged.cs" />
@@ -99,6 +101,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Themes\Mohsenmou.UI.WPF.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Styles\AccordionStyles.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

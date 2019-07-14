@@ -5,63 +5,59 @@
     xmlns:converters="clr-namespace:Mohsenmou.UI.WPF.Converters"
     xmlns:theme="clr-namespace:Mohsenmou.UI.WPF">
 
+    <ControlTemplate x:Key="BadgedTemplate" TargetType="{x:Type controls:Badged}">
+        <Grid>
+            <Canvas
+                Width="{Binding ElementName=contentPresenter, Path=ActualWidth}"
+                Height="{Binding ElementName=contentPresenter, Path=ActualHeight}">
+                <ContentPresenter x:Name="contentPresenter"
+                    Margin="{TemplateBinding Padding}"
+                    HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                    VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                    Content="{TemplateBinding Content}"
+                    ContentStringFormat="{TemplateBinding ContentStringFormat}"
+                    ContentTemplate="{TemplateBinding ContentTemplate}"
+                    ContentTemplateSelector="{TemplateBinding ContentTemplateSelector}"
+                    SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                <Border x:Name="PART_BadgeContainer"
+                    Canvas.Left="{Binding Path=Content, Converter={converters:BadgedLeftConverter}, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type controls:Badged}}}"
+                    Canvas.Top="{Binding Path=Content, Converter={converters:BadgedTopConverter}, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type controls:Badged}}}"
+                    MinWidth="18"
+                    MinHeight="18"
+                    Background="{TemplateBinding BorderBrush}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    CornerRadius="1"
+                    IsHitTestVisible="False"
+                    RenderTransformOrigin="0.5,0.5"
+                    TextElement.FontSize="10"
+                    TextElement.FontWeight="DemiBold"
+                    Visibility="{TemplateBinding IsBadgeSet,
+                                                 Converter={converters:BoolToVisibilityFlexConverter}}">
+                    <ContentControl
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Content="{TemplateBinding Badge}"
+                        Focusable="False"
+                        Foreground="{theme:ThemeResource ResourceKey=ControlForeground}"
+                        IsTabStop="False" />
+                </Border>
+            </Canvas>
+        </Grid>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsEnabled" Value="false">
+                <Setter Property="Opacity" Value="{theme:ThemeResource ResourceKey=ControlDisabledOpacity}" />
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
     <Style TargetType="{x:Type controls:Badged}">
         <Setter Property="Background" Value="{theme:ThemeResource ResourceKey=ControlBackground}" />
         <Setter Property="BorderBrush" Value="{theme:ThemeResource ResourceKey=ControlBorder}" />
         <Setter Property="Foreground" Value="{theme:ThemeResource ResourceKey=ControlForeground}" />
         <Setter Property="BorderThickness" Value="0" />
-        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
         <Setter Property="IsTabStop" Value="False" />
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="{x:Type controls:Badged}">
-
-                    <Grid>
-                        <Canvas
-                            Width="{Binding ElementName=contentPresenter, Path=ActualWidth}"
-                            Height="{Binding ElementName=contentPresenter, Path=ActualHeight}">
-                            <ContentPresenter x:Name="contentPresenter"
-                                Margin="{TemplateBinding Padding}"
-                                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                                Content="{TemplateBinding Content}"
-                                ContentStringFormat="{TemplateBinding ContentStringFormat}"
-                                ContentTemplate="{TemplateBinding ContentTemplate}"
-                                ContentTemplateSelector="{TemplateBinding ContentTemplateSelector}"
-                                SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
-                            <Border x:Name="PART_BadgeContainer"
-                                Canvas.Left="{Binding Path=Content, Converter={converters:BadgedLeftConverter}, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type controls:Badged}}}"
-                                Canvas.Top="{Binding Path=Content, Converter={converters:BadgedTopConverter}, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type controls:Badged}}}"
-                                MinWidth="18"
-                                MinHeight="18"
-                                Background="{TemplateBinding BorderBrush}"
-                                BorderBrush="{TemplateBinding BorderBrush}"
-                                BorderThickness="{TemplateBinding BorderThickness}"
-                                CornerRadius="1"
-                                IsHitTestVisible="False"
-                                RenderTransformOrigin="0.5,0.5"
-                                TextElement.FontSize="10"
-                                TextElement.FontWeight="DemiBold"
-                                Visibility="{TemplateBinding IsBadgeSet,
-                                                             Converter={converters:BoolToVisibilityFlexConverter}}">
-                                <ContentControl
-                                    HorizontalAlignment="Center"
-                                    VerticalAlignment="Center"
-                                    Content="{TemplateBinding Badge}"
-                                    Focusable="False"
-                                    Foreground="{theme:ThemeResource ResourceKey=ControlForeground}"
-                                    IsTabStop="False" />
-                            </Border>
-                        </Canvas>
-                    </Grid>
-
-                    <ControlTemplate.Triggers>
-                        <Trigger Property="IsEnabled" Value="false">
-                            <Setter Property="Opacity" Value="{theme:ThemeResource ResourceKey=ControlDisabledOpacity}" />
-                        </Trigger>
-                    </ControlTemplate.Triggers>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
+        <Setter Property="Template" Value="{StaticResource BadgedTemplate}" />
     </Style>
+
 </ResourceDictionary>
