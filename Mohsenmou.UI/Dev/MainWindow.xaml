@@ -6,6 +6,7 @@
     Title="Mohsenmou.UI.WPF"
     Width="800"
     Height="450"
+    mui:WindowSettings.Save="True"
     FlowDirection="LeftToRight"
     FontFamily="Segoe UI Light"
     FontSize="14"
@@ -89,20 +90,14 @@
                         Height="500"
                         Margin="5"
                         HorizontalAlignment="Left">
-                        <mui:AccordionItem
-                            Header="Item 1"
-                            Icon="{DynamicResource Icon_TeRex}"
-                            ShowIcon="True">
+                        <mui:AccordionItem Header="Item 1">
                             <mui:AccordionItem Header="SubItem 1" />
                             <mui:AccordionItem Header="SubItem 2" />
                             <mui:AccordionItem Header="SubItem 3" />
                             <mui:AccordionItem Header="SubItem 4" />
                         </mui:AccordionItem>
 
-                        <mui:AccordionItem
-                            Header="Item 2"
-                            Icon="{DynamicResource Icon_Logo}"
-                            ShowIcon="True">
+                        <mui:AccordionItem Header="Item 2">
                             <mui:AccordionItem Header="SubItem 1" />
                             <mui:AccordionItem Header="SubItem 2" />
                         </mui:AccordionItem>
