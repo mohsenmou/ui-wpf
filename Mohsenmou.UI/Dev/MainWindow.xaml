@@ -8,113 +8,15 @@
     Height="450"
     mui:WindowSettings.Save="True"
     FlowDirection="LeftToRight"
-    FontFamily="Segoe UI Light"
     FontSize="14"
     Icon="{Binding Path=Icon_TeRex, Converter={mui:XamlImageKeyToImageSourceConverter ForegroundResourceKey=WindowHeaderForeground, Height=16, Width=16}}"
     Style="{DynamicResource MainWindowStyle}">
     <Grid Background="{mui:ThemeResource ResourceKey=ContentBackground}">
         <TabControl Margin="5">
-            <TabItem Header="Item 1">
-                <StackPanel Margin="5">
-                    <TextBlock>This is content of item #1</TextBlock>
-                    <RadioButton
-                        Margin="5"
-                        Content="Radio Button 1" />
-                    <RadioButton
-                        Margin="5"
-                        Content="Radio Button 2" />
-                    <RadioButton
-                        Margin="5"
-                        Content="Radio Button 3" />
-                    <RadioButton
-                        Margin="5"
-                        Content="Radio Button 4" />
-                    <CheckBox Margin="5">CheckBox 1</CheckBox>
-                    <CheckBox Margin="5">CheckBox 2</CheckBox>
-
-
-                    <TextBlock
-                        Margin="5,5,5,0"
-                        Text="Enter Username:" />
-
-                    <mui:Badged
-                        Margin="5"
-                        HorizontalAlignment="Left"
-                        Badge="{Binding ElementName=txt, Path=Text.Length}"
-                        IsBadgeSet="True">
-                        <TextBox x:Name="txt"
-                            Width="150"
-                            Margin="0,0,0,0"
-                            mui:TextBoxHelper.ClearTextButton="True"
-                            mui:TextBoxHelper.Watermark="Username" />
-                    </mui:Badged>
-
-                    <mui:Badged
-                        Margin="5"
-                        HorizontalAlignment="Left"
-                        Badge="{Binding ElementName=txt, Path=Text.Length}"
-                        IsBadgeSet="True">
-                        <Button
-                            Width="200"
-                            mui:ButtonProperties.Icon="{DynamicResource Icon_Expand}"
-                            mui:ButtonProperties.ShowIcon="True"
-                            Content="Submit" />
-                    </mui:Badged>
-
-
-                    <!--<Button x:Name="btn" HorizontalAlignment="Left"
-                        Width="85"
-                        Margin="5"
-                        mui:ButtonProperties.Icon="{DynamicResource Icon_TeRex}"
-                        mui:ButtonProperties.ShowIcon="True"
-                        Click="OnClick">
-                        Submit
-                    </Button>
-
-
-                    <Button HorizontalAlignment="Left"
-                        Width="85"
-                        Margin="5,5,400,0"
-                        mui:ButtonProperties.Icon="{DynamicResource Icon_Delete}"
-                        mui:ButtonProperties.ShowIcon="True">
-                        Submit
-                    </Button>-->
-
-
-                </StackPanel>
-            </TabItem>
-            <TabItem Header="Item 2">
-                <StackPanel Margin="5">
-                    <TextBlock Margin="5">This is content of item #2</TextBlock>
-                    <mui:Accordion
-                        Width="200"
-                        Height="500"
-                        Margin="5"
-                        HorizontalAlignment="Left">
-
-                        <mui:AccordionItem
-                            Header="Item 1"
-                            Icon="{DynamicResource Icon_Delete}"
-                            ShowIcon="True">
-                            <mui:AccordionItem Header="SubItem 1" />
-                            <mui:AccordionItem Header="SubItem 2" />
-                            <mui:AccordionItem Header="SubItem 3" />
-                            <mui:AccordionItem Header="SubItem 4" />
-                        </mui:AccordionItem>
-
-
-                        <mui:AccordionItem Header="Item 2">
-                            <mui:AccordionItem Header="SubItem 1" />
-                            <mui:AccordionItem Header="SubItem 2" />
-                        </mui:AccordionItem>
-                    </mui:Accordion>
-                </StackPanel>
-            </TabItem>
-            <TabItem Header="Item 3">
-
-                <Grid Margin="20">
+            <TabItem Header="TabItem #1">
+                <Grid Margin="5,10">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="auto" />
+                        <ColumnDefinition Width="Auto" />
                         <ColumnDefinition />
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
@@ -123,53 +25,325 @@
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
-                    <mui:Badged
-                        Badge="555"
-                        IsBadgeSet="True">
-                        <Button
-                            mui:ButtonProperties.Icon="{DynamicResource Icon_Delete}"
-                            mui:ButtonProperties.ShowIcon="True"
-                            Content="Submit" />
-                    </mui:Badged>
 
-                    <mui:Badged
+                    <TextBlock
+                        Grid.ColumnSpan="2"
+                        Margin="0,8,0,0"
+                        Text="Button control without icon:" />
+                    <Button
                         Grid.Row="1"
-                        Margin="0,20"
-                        Badge="{Binding ElementName=combo, Path=SelectedIndex}"
-                        IsBadgeSet="True">
-                        <ComboBox x:Name="combo">
-                            <ComboBoxItem>Item 1</ComboBoxItem>
-                            <ComboBoxItem>Item 2</ComboBoxItem>
-                            <ComboBoxItem>Item 3</ComboBoxItem>
-                        </ComboBox>
-                    </mui:Badged>
+                        Content="Button" />
 
-                    <ComboBox Grid.Row="2">
-                        <ComboBoxItem>Item 1</ComboBoxItem>
-                        <ComboBoxItem>Item 2</ComboBoxItem>
-                        <ComboBoxItem>Item 3</ComboBoxItem>
+                    <TextBlock
+                        Grid.Row="2"
+                        Grid.ColumnSpan="2"
+                        Margin="0,8,0,0"
+                        Text="Button control with icon:" />
+                    <TextBlock
+                        Grid.Row="3"
+                        Grid.ColumnSpan="2"
+                        Text="First set ShowIcon attached property to true, then set the icon property" />
+                    <Button
+                        Grid.Row="4"
+                        mui:ButtonProperties.Icon="{DynamicResource Icon_Button}"
+                        mui:ButtonProperties.ShowIcon="True"
+                        Content="Button" />
+                    <TextBlock
+                        Grid.Row="5"
+                        Grid.ColumnSpan="2"
+                        Margin="0,8,0,0"
+                        Text="CheckBox:" />
+                    <CheckBox
+                        Grid.Row="6"
+                        Content="CheckBox #1" />
+                    <CheckBox
+                        Grid.Row="7"
+                        Content="CheckBox #2" />
+                    <TextBlock
+                        Grid.Row="8"
+                        Grid.ColumnSpan="2"
+                        Margin="0,8,0,0"
+                        Text="ComboBox:" />
+                    <ComboBox Grid.Row="9">
+                        <ComboBoxItem>Item #1</ComboBoxItem>
+                        <ComboBoxItem>Item #2</ComboBoxItem>
+                        <ComboBoxItem IsSelected="True">Item #3</ComboBoxItem>
                     </ComboBox>
-                </Grid>
 
+                    <TextBlock
+                        Grid.Row="10"
+                        Grid.ColumnSpan="2"
+                        Margin="0,8,0,0"
+                        Text="Editable ComboBox:" />
+                    <ComboBox
+                        Grid.Row="11"
+                        IsEditable="True">
+                        <ComboBoxItem IsSelected="True">Item #1</ComboBoxItem>
+                        <ComboBoxItem>Item #2</ComboBoxItem>
+                        <ComboBoxItem>Item #3</ComboBoxItem>
+                    </ComboBox>
+
+                    <TextBlock
+                        Grid.Row="12"
+                        Grid.ColumnSpan="2"
+                        Margin="0,8,0,0"
+                        Text="RadioButton:" />
+                    <RadioButton
+                        Grid.Row="13"
+                        Content="RadioButton #1" />
+                    <RadioButton
+                        Grid.Row="14"
+                        Content="RadioButton #2" />
+
+                    <TextBlock
+                        Grid.Row="15"
+                        Grid.ColumnSpan="2"
+                        Margin="0,8,0,0"
+                        Text="TextBox:" />
+                    <TextBox Grid.Row="16" />
+
+                    <TextBlock
+                        Grid.Row="17"
+                        Grid.ColumnSpan="2"
+                        Margin="0,8,0,0"
+                        Text="Set Watermark attached property, you can also set ClearTextButton to true to clear the textbox text" />
+                    <TextBox
+                        Grid.Row="18"
+                        mui:TextBoxHelper.ClearTextButton="True"
+                        mui:TextBoxHelper.Watermark="TextBox" />
+
+                </Grid>
             </TabItem>
-            <TabItem Header="Item 4">
-                <TextBlock Margin="5">This is content of item #4</TextBlock>
-            </TabItem>
-            <TabItem Header="Item 5">
-                <TextBlock Margin="5">This is content of item #5</TextBlock>
-            </TabItem>
-            <TabItem Header="Item 6">
-                <TextBlock Margin="5">This is content of item #6</TextBlock>
-            </TabItem>
-            <TabItem Header="Item 7">
-                <TextBlock Margin="5">This is content of item #7</TextBlock>
-            </TabItem>
-            <TabItem Header="Item 8">
-                <TextBlock Margin="5">This is content of item #8</TextBlock>
-            </TabItem>
-            <TabItem Header="Item 9">
-                <TextBlock Margin="5">This is content of item #9</TextBlock>
+            <TabItem Header="TabItem #2">
+                <Grid Margin="5,10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <TextBlock
+                        Grid.ColumnSpan="3"
+                        Margin="0,8,0,0"
+                        Text="Badged Control:" />
+                    <TextBlock
+                        Grid.Row="1"
+                        Grid.ColumnSpan="3"
+                        Margin="0,0,0,8"
+                        Text="You can set BadgePlacemnetMode property to top, left, bottom, right and other directions:" />
+                    <mui:Badged
+                        Grid.Row="2"
+                        Badge="New!"
+                        IsBadgeSet="True">
+                        <Button Content="Button" />
+                    </mui:Badged>
+                    <mui:Badged
+                        Grid.Row="2"
+                        Grid.Column="1"
+                        Margin="20,0"
+                        Badge="{Binding ElementName=txt, Path=Text.Length}"
+                        BadgePlacementMode="BottomRight"
+                        IsBadgeSet="True">
+                        <TextBox x:Name="txt"
+                            MinWidth="150"
+                            mui:TextBoxHelper.ClearTextButton="True"
+                            mui:TextBoxHelper.Watermark="BadgePlacementMode=BottomRight"
+                            Text="TextBox" />
+                    </mui:Badged>
+                    <TextBlock
+                        Grid.Row="3"
+                        Grid.ColumnSpan="3"
+                        Margin="0,8,0,5"
+                        Text="ProgressBar:" />
+                    <ProgressBar x:Name="progress"
+                        Grid.Row="4"
+                        Grid.Column="1"
+                        Grid.ColumnSpan="2"
+                        Margin="20,0"
+                        Maximum="100"
+                        Minimum="0"
+                        Value="40" />
+                    <CheckBox
+                        Grid.Row="4"
+                        Grid.Column="0"
+                        Content="IsIntermedate"
+                        IsChecked="{Binding ElementName=progress, Path=IsIndeterminate}" />
+                    <TextBlock
+                        Grid.Row="5"
+                        Grid.ColumnSpan="3"
+                        Margin="0,8,0,5"
+                        Text="Slider:" />
+                    <Slider x:Name="slider"
+                        Grid.Row="6"
+                        Grid.Column="2"
+                        Margin="20,0"
+                        IsSnapToTickEnabled="True"
+                        Maximum="100"
+                        Minimum="0"
+                        SelectionEnd="55"
+                        SelectionStart="25"
+                        Value="40" />
+                    <CheckBox
+                        Grid.Row="6"
+                        Grid.Column="0"
+                        Content="IsSelectionRangeEnabled"
+                        IsChecked="{Binding ElementName=slider, Path=IsSelectionRangeEnabled}" />
+                    <CheckBox
+                        Grid.Row="6"
+                        Grid.Column="1"
+                        Margin="8,0,0,0"
+                        Content="IsSnapToTickEnabled"
+                        IsChecked="{Binding ElementName=slider, Path=IsSnapToTickEnabled}" />
+
+                    <TextBlock
+                        Grid.Row="7"
+                        Margin="0,8,0,0"
+                        Text="GroupBox:" />
+
+                    <GroupBox
+                        Grid.Row="8"
+                        Margin="0,8,0,0"
+                        Header="Login">
+                        <StackPanel>
+                            <TextBlock
+                                Margin="0,5,0,0"
+                                Text="Username:" />
+                            <TextBox
+                                Margin="0,2,0,0"
+                                mui:TextBoxHelper.Watermark="Username" />
+                            <TextBlock
+                                Margin="0,5,0,0"
+                                Text="Password:" />
+                            <TextBox
+                                Margin="0,2,0,0"
+                                mui:TextBoxHelper.Watermark="Password" />
+                        </StackPanel>
+                    </GroupBox>
+
+                    <TextBlock
+                        Grid.Row="7"
+                        Grid.Column="1"
+                        Margin="20,8"
+                        Text="Accordion:" />
+
+                    <mui:Accordion
+                        Grid.Row="8"
+                        Grid.Column="1"
+                        Margin="20,8">
+                        <mui:AccordionItem
+                            Header="Item #1"
+                            Icon="{DynamicResource Icon_Button}"
+                            ShowIcon="True">
+                            <mui:AccordionItem Header="SubItem #1" />
+                            <mui:AccordionItem Header="SubItem #2" />
+                        </mui:AccordionItem>
+                        <mui:AccordionItem
+                            Header="Item #2"
+                            Icon="{DynamicResource Icon_Button}"
+                            ShowIcon="True">
+                            <mui:AccordionItem Header="SubItem #1" />
+                            <mui:AccordionItem Header="SubItem #2" />
+                        </mui:AccordionItem>
+                    </mui:Accordion>
+
+                    <TextBlock
+                        Grid.Row="7"
+                        Grid.Column="3"
+                        Margin="20,8"
+                        Text="Tab Control:" />
+
+                    <TabControl
+                        Grid.Row="8"
+                        Grid.Column="3"
+                        Margin="20,8">
+                        <TabItem Header="TabItem #1">
+                            <TextBlock
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Text="Content of TabItem #1" />
+                        </TabItem>
+                        <TabItem Header="TabItem #2">
+                            <TextBlock
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Text="Content of TabItem #2" />
+                        </TabItem>
+                        <TabItem Header="TabItem #3">
+                            <TextBlock
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Text="Content of TabItem #3" />
+                        </TabItem>
+                        <TabItem Header="TabItem #4">
+                            <TextBlock
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Text="Content of TabItem #4" />
+                        </TabItem>
+                        <TabItem Header="TabItem #5">
+                            <TextBlock
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Text="Content of TabItem #5" />
+                        </TabItem>
+                        <TabItem Header="TabItem #6">
+                            <TextBlock
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Text="Content of TabItem #6" />
+                        </TabItem>
+                        <TabItem Header="TabItem #7">
+                            <TextBlock
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Text="Content of TabItem #7" />
+                        </TabItem>
+                        <TabItem Header="TabItem #8">
+                            <TextBlock
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Text="Content of TabItem #8" />
+                        </TabItem>                        
+                    </TabControl>
+
+                </Grid>
             </TabItem>
         </TabControl>
     </Grid>

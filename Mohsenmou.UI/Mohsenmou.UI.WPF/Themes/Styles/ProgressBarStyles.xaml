@@ -6,6 +6,7 @@
     <ControlTemplate x:Key="ProgressBarTemplate" TargetType="{x:Type ProgressBar}">
         <Grid x:Name="TemplateRoot">
             <Border
+                MaxHeight="{TemplateBinding MaxHeight}"
                 Background="{TemplateBinding Background}"
                 BorderBrush="{TemplateBinding BorderBrush}"
                 BorderThickness="{TemplateBinding BorderThickness}" />
@@ -80,9 +81,10 @@
 
     <Style x:Key="ProgressBarStyle" TargetType="{x:Type ProgressBar}">
         <Setter Property="Foreground" Value="{theme:ThemeResource ResourceKey=ControlForeground}" />
-        <Setter Property="Background" Value="{theme:ThemeResource ResourceKey=ControlBackground}" />
+        <Setter Property="Background" Value="{theme:ThemeResource ResourceKey=ControlBorder}" />
         <Setter Property="BorderBrush" Value="{theme:ThemeResource ResourceKey=ControlBorder}" />
         <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="MaxHeight" Value="3" />
         <Setter Property="Template" Value="{StaticResource ProgressBarTemplate}" />
     </Style>
 

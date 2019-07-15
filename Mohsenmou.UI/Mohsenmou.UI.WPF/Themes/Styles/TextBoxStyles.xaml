@@ -62,7 +62,7 @@
         <Setter Property="SelectionBrush" Value="{theme:ThemeResource ResourceKey=ControlHighlightBackground}" />
         <Setter Property="CaretBrush" Value="{theme:ThemeResource ResourceKey=ControlForeground}" />
         <Setter Property="BorderThickness" Value="1" />
-        <Setter Property="Padding" Value="6,4,0,4" />
+        <Setter Property="Padding" Value="6,4,4,4" />
         <Setter Property="KeyboardNavigation.TabNavigation" Value="None" />
         <Setter Property="HorizontalContentAlignment" Value="Left" />
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />

@@ -148,8 +148,8 @@
             UseLayoutRounding="True">
             <Path x:Name="grip"
                 VerticalAlignment="Center"
-                Data="M 0,0 C0,0 11,0 11,0 11,0 11,18 11,18 11,18 0,18 0,18 0,18 0,0 0,0 z"
-                Fill="{theme:ThemeResource ResourceKey=ControlBackground}"
+                Data="M3.6000366,0L28.400024,0C30.400024,0,32,1.6000366,32,3.6000366L32,28.400024C32,30.400024,30.400024,32,28.400024,32L3.6000366,32C1.6000366,32,0,30.400024,0,28.400024L0,3.6000366C0,1.6000366,1.6000366,0,3.6000366,0z"
+                Fill="{theme:ThemeResource ResourceKey=ControlBorder}"
                 SnapsToDevicePixels="True"
                 Stretch="Fill"
                 Stroke="{theme:ThemeResource ResourceKey=ControlBorder}"
@@ -222,14 +222,15 @@
                     <Border x:Name="TrackBackground"
                         Grid.Row="1"
                         Height="4.0"
+                        MaxHeight="3"
                         Margin="5,0"
                         VerticalAlignment="center"
-                        Background="{theme:ThemeResource ResourceKey=ControlBackground}"
+                        Background="{theme:ThemeResource ResourceKey=ControlBorder}"
                         BorderBrush="{theme:ThemeResource ResourceKey=ControlBorder}"
                         BorderThickness="1">
                         <Canvas Margin="-6,-1">
                             <Rectangle x:Name="PART_SelectionRange"
-                                Height="4.0"
+                                Height="3.0"
                                 Fill="{theme:ThemeResource ResourceKey=GlyphForeground}"
                                 Visibility="Collapsed" />
                         </Canvas>
@@ -258,10 +259,10 @@
                     </Track>
                 </Grid>
             </Border>
-            <Border x:Name="FocusBorder"
-                BorderBrush="{theme:ThemeResource ResourceKey=ControlFocusBorder}"
-                BorderThickness="1"
-                Visibility="Collapsed" />
+            <Border x:Name="FocusBorder"                        
+                        BorderBrush="{theme:ThemeResource ResourceKey=ControlFocusBorder}"
+                        BorderThickness="1"
+                        Visibility="Collapsed" />
         </Grid>
         <ControlTemplate.Triggers>
             <Trigger Property="TickPlacement" Value="TopLeft">
@@ -377,9 +378,6 @@
             </Trigger>
             <Trigger Property="IsSelectionRangeEnabled" Value="true">
                 <Setter TargetName="PART_SelectionRange" Property="Visibility" Value="Visible" />
-            </Trigger>
-            <Trigger Property="IsFocused" Value="true">
-                <Setter TargetName="FocusBorder" Property="Visibility" Value="Visible" />
             </Trigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>

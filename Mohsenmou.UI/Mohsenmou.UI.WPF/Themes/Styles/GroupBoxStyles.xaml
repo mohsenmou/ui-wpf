@@ -40,7 +40,7 @@
         <Setter Property="Foreground" Value="{theme:ThemeResource ResourceKey=ContentForeground}" />
         <Setter Property="BorderBrush" Value="{theme:ThemeResource ResourceKey=GroupBoxHeaderBorder}" />
         <Setter Property="BorderThickness" Value="0,0,0,1" />
-        <Setter Property="Padding" Value="8,16,8,8" />
+        <Setter Property="Padding" Value="0" />
         <Setter Property="Template" Value="{StaticResource GroupBoxTemplate}" />
     </Style>
     

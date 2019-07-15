@@ -90,6 +90,7 @@
     </ControlTemplate>
 
     <Style x:Key="MainWindowStyle" TargetType="{x:Type Window}">
+        <Setter Property="FontFamily" Value="{DynamicResource DefaultFont}"/>
         <Setter Property="UseLayoutRounding" Value="True" />
         <Setter Property="TextOptions.TextFormattingMode" Value="Ideal" />
         <Setter Property="TextOptions.TextRenderingMode" Value="ClearType" />

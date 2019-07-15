@@ -58,7 +58,7 @@ namespace Mohsenmou.UI.WPF
                     InitializeLightTheme(Colors.DarkOrange);
                     break;
                 case ThemeType.Dark:
-                    InitializeDarkTheme(Colors.Violet);
+                    InitializeDarkTheme(Colors.DarkTurquoise);
                     break;
             }
         }
@@ -176,7 +176,7 @@ namespace Mohsenmou.UI.WPF
             SetResource(ThemeResourceKey.ListSelectedForeground.ToString(), new SolidColorBrush(ColorFromHex(foregroundColor)));
 
             //Set glyph resource Keys
-            SetResource(ThemeResourceKey.GlyphForeground.ToString(), new SolidColorBrush(ColorHelper.GetColorDarker(accentColor, 0.8)));
+            SetResource(ThemeResourceKey.GlyphForeground.ToString(), new SolidColorBrush(ColorFromHex(foregroundColor)));
 
             //Set groupbox resource Keys
             SetResource(ThemeResourceKey.GroupBoxHeaderBorder.ToString(), new SolidColorBrush(ColorHelper.GetColorDarker(accentColor, 0.9)));

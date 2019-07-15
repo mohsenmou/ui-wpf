@@ -5,8 +5,31 @@
     xmlns:converters="clr-namespace:Mohsenmou.UI.WPF.Converters"
     xmlns:theme="clr-namespace:Mohsenmou.UI.WPF">
 
+    <SineEase x:Key="BadgeEase"
+        EasingMode="EaseOut" />
+    <Storyboard x:Key="BadgeChangedStoryboard">
+        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)">
+            <EasingDoubleKeyFrame
+                KeyTime="0"
+                Value="1.4" />
+            <EasingDoubleKeyFrame
+                EasingFunction="{StaticResource BadgeEase}"
+                KeyTime="0:0:0.3"
+                Value="1" />
+        </DoubleAnimationUsingKeyFrames>
+        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)">
+            <EasingDoubleKeyFrame
+                KeyTime="0"
+                Value="1.4" />
+            <EasingDoubleKeyFrame
+                EasingFunction="{StaticResource BadgeEase}"
+                KeyTime="0:0:0.3"
+                Value="1" />
+        </DoubleAnimationUsingKeyFrames>
+    </Storyboard>
+
     <Style TargetType="{x:Type controls:Badged}">
-        <Setter Property="Background" Value="{theme:ThemeResource ResourceKey=ControlHighlightBackground}" />
+        <Setter Property="Background" Value="{theme:ThemeResource ResourceKey=ControlPressedBackground}" />
         <Setter Property="Foreground" Value="{theme:ThemeResource ResourceKey=ControlForeground}" />
         <Setter Property="BadgePlacementMode" Value="TopRight" />
         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
@@ -45,7 +68,7 @@
                             <Border.RenderTransform>
                                 <TransformGroup>
                                     <ScaleTransform ScaleX="1" ScaleY="1" />
-                                    <TranslateTransform x:Name="translate"  />
+                                    <TranslateTransform x:Name="translate" />
                                 </TransformGroup>
                             </Border.RenderTransform>
                             <ContentControl

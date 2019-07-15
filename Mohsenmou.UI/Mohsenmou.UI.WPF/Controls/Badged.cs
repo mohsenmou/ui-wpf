@@ -1,5 +1,4 @@
-﻿using System;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 
@@ -21,12 +20,23 @@ namespace Mohsenmou.UI.WPF.Controls
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(Badged), new FrameworkPropertyMetadata(typeof(Badged)));
         }
-
-
-
+        public object Badge
+        {
+            get { return (object)GetValue(BadgeProperty); }
+            set { SetValue(BadgeProperty, value); }
+        }
+        public BadgePlacement BadgePlacementMode
+        {
+            get { return (BadgePlacement)GetValue(BadgePlacementModeProperty); }
+            set { SetValue(BadgePlacementModeProperty, value); }
+        }
+        public bool IsBadgeSet
+        {
+            get { return (bool)GetValue(IsBadgeSetProperty); }
+            set { SetValue(IsBadgeSetProperty, value); }
+        }
         public override void OnApplyTemplate()
         {
-
             if (GetTemplateChild("translate") is TranslateTransform translate)
             {
                 switch (BadgePlacementMode)
@@ -66,23 +76,5 @@ namespace Mohsenmou.UI.WPF.Controls
             base.OnApplyTemplate();
 
         }
-        public object Badge
-        {
-            get { return (object)GetValue(BadgeProperty); }
-            set { SetValue(BadgeProperty, value); }
-        }
-
-        public BadgePlacement BadgePlacementMode
-        {
-            get { return (BadgePlacement)GetValue(BadgePlacementModeProperty); }
-            set { SetValue(BadgePlacementModeProperty, value); }
-        }
-
-        public bool IsBadgeSet
-        {
-            get { return (bool)GetValue(IsBadgeSetProperty); }
-            set { SetValue(IsBadgeSetProperty, value); }
-        }
-
     }
 }
