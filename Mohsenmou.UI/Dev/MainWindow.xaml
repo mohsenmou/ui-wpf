@@ -1,10 +1,16 @@
 ﻿<Window x:Class="Dev.MainWindow"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="clr-namespace:Mohsenmou.UI.WPF.Controls;assembly=Mohsenmou.UI.WPF"
     xmlns:mui="https://github.com/mohsenmou/ui-wpf"
-    Title="MainWindow" mui:WindowSettings.Save="True"
+    Title="MainWindow"
     Width="800"
     Height="450"
+    mui:WindowSettings.Save="True"
     Style="{DynamicResource MainWindowStyle}">
-    <Grid Background="{mui:ThemeResource ResourceKey=ContentBackground}" />
+    <Grid Background="{mui:ThemeResource ResourceKey=ContentBackground}">
+        <controls:Accordion />
+
+
+    </Grid>
 </Window>
