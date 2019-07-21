@@ -14,7 +14,7 @@ PM> Install-Package Mohsenmou.UI.WPF
 ## Styling the Window
 
 After installing of **Mohsenmou.UI.WPF**:
-	1. Open <u>*MainWindow.xaml*</u>
+	1. Open MainWindow.xaml
 	2. Add this attribute inside the opening Window tag. (It’s how you reference other namespaces in XAML):   
 
    ```xaml
