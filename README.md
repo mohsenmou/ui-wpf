@@ -15,31 +15,27 @@ PM> Install-Package Mohsenmou.UI.WPF
 
 After installing of **Mohsenmou.UI.WPF**:
 	1. Open <u>*MainWindow.xaml*</u>
-	2. Add this attribute inside the opening Window tag. (It�s how you reference other namespaces in XAML):
-	   
-	   ```xaml
-	   xmlns:mohsenmou="https://github.com/mohsenmou/ui-wpf"
-	   ```
-	   
-	   or
-	   
-	   ```xaml
-	   xmlns:controls="clr-namespace:Mohsenmou.UI.WPF.Controls;assembly=Mohsenmou.UI.WPF"
-	   ```
-	   
-	   
-	   
-	3. Set style of MainWindow to 
-	
-	   ```xaml
-	   Style="{DynamicResource MainWindowStyle}"
-	   ```
-	
-	   
+	2. Add this attribute inside the opening Window tag. (It’s how you reference other namespaces in XAML):   
+
+   ```xaml
+   xmlns:mohsenmou="https://github.com/mohsenmou/ui-wpf"
+   ```
+
+   or
+
+   ```xaml
+   xmlns:controls="clr-namespace:Mohsenmou.UI.WPF.Controls;assembly=Mohsenmou.UI.WPF"
+   ```
+
+
+​	   	3. Set style of MainWindow to Style="{DynamicResource MainWindowStyle}"
+
+
+​	   
 
 ## Using Built-In Styles
 
-All of **Mohsenmou.UI.WPF**�s resources are contained within separate resource dictionaries. In order for most of the controls to adopt the **Mohsenmou.UI.WPF** theme, you will need to add the following ResourceDictionary to your <u>*App.xaml*</u>.
+All of **Mohsenmou.UI.WPF**’s resources are contained within separate resource dictionaries. In order for most of the controls to adopt the **Mohsenmou.UI.WPF** theme, you will need to add the following ResourceDictionary to your <u>*App.xaml*</u>.
 
 ```xaml	
 <Application x:Class="Dev.App"
