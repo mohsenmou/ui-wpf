@@ -90,7 +90,8 @@
     </ControlTemplate>
 
     <Style x:Key="MainWindowStyle" TargetType="{x:Type Window}">
-        <Setter Property="FontFamily" Value="{DynamicResource DefaultFont}"/>
+        <Setter Property="FontFamily" Value="{DynamicResource DefaultFont}" />
+        <Setter Property="FontSize" Value="{DynamicResource DefaultFontSize}" />
         <Setter Property="UseLayoutRounding" Value="True" />
         <Setter Property="TextOptions.TextFormattingMode" Value="Ideal" />
         <Setter Property="TextOptions.TextRenderingMode" Value="ClearType" />
@@ -99,7 +100,7 @@
                 <WindowChrome
                     CaptionHeight="32"
                     CornerRadius="0"
-                    GlassFrameThickness="0,0,0,1"
+                    GlassFrameThickness="1"
                     NonClientFrameEdges="None"
                     ResizeBorderThickness="4"
                     UseAeroCaptionButtons="False" />

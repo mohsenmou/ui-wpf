@@ -10,8 +10,8 @@
     <iconUrl>https://github.com/mohsenmou/ui-wpf</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
-    <releaseNotes>Summary of changes made in this release of the package.</releaseNotes>
+    <releaseNotes>mohsen mousavi</releaseNotes>
     <copyright>Copyright 2019 Mohsenmou</copyright>
-    <tags>WPF, Theme, Custom Controls, WPF Toolkit</tags>
+    <tags>WPF Toolkit, Custom Controls, Theme Support</tags>
   </metadata>
 </package>

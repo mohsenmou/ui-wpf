@@ -150,7 +150,7 @@
         </ControlTemplate.Triggers>
     </ControlTemplate>
 
-    <Style TargetType="{x:Type controls:Accordion}">
+    <Style x:Key="AccordionStyle" TargetType="{x:Type controls:Accordion}">
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
         <Setter Property="Background" Value="{theme:ThemeResource ResourceKey=ControlBackground}" />
         <Setter Property="BorderBrush" Value="{theme:ThemeResource ResourceKey=ControlBorder}" />

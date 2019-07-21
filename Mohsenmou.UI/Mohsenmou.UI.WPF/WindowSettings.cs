@@ -35,10 +35,8 @@ namespace Mohsenmou.UI.WPF
 
         public override bool Equals(object obj)
         {
-            if (obj is POINT)
+            if (obj is POINT point)
             {
-                var point = (POINT)obj;
-
                 return point._x == _x && point._y == _y;
             }
             return base.Equals(obj);

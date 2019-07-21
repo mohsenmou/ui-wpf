@@ -59,7 +59,6 @@
         <Setter Property="Template" Value="{StaticResource ComboBoxItemTemplate}" />
     </Style>
 
-    <Style BasedOn="{StaticResource ComboBoxItemStyle}" TargetType="{x:Type ComboBoxItem}" />
 
     <ControlTemplate x:Key="ComboBoxToggleButtonTemplate" TargetType="{x:Type ToggleButton}">
         <Border x:Name="templateRoot"

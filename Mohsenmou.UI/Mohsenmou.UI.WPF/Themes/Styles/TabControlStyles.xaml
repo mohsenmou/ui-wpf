@@ -128,6 +128,6 @@
     </Style>
 
     <Style BasedOn="{StaticResource TabItemStyle}" TargetType="{x:Type TabItem}" />
-    <Style BasedOn="{StaticResource TabControlStyle}" TargetType="{x:Type TabControl}" />
+
 
 </ResourceDictionary>

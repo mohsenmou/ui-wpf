@@ -154,7 +154,6 @@
         </Style.Triggers>
     </Style>
 
-    <Style BasedOn="{StaticResource ScrollBarStyle}" TargetType="{x:Type ScrollBar}" />
 
     <ControlTemplate x:Key="ScrollViewerTemplate" TargetType="{x:Type ScrollViewer}">
         <Grid x:Name="Grid"

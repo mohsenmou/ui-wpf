@@ -56,7 +56,6 @@
     <Compile Include="Controls\AdornedControl.cs" />
     <Compile Include="Controls\AdornerPlacement.cs" />
     <Compile Include="Controls\Badged.cs" />
-    <Compile Include="Controls\BadgedAdorner.cs" />
     <Compile Include="Controls\BadgedPlacement.cs" />
     <Compile Include="Controls\FrameworkElementAdorner.cs" />
     <Compile Include="Controls\XamlImage.cs" />
@@ -174,7 +173,7 @@
   <PropertyGroup>
     <PostBuildEvent>if $(ConfigurationName) == Release (
     nuget pack "$(ProjectPath)" -Properties Configuration=Release
-    xcopy "$(TargetDir)*.nupkg" "D:\mohsenmou\ui-wpf\Mohsenmou.UI\Mohsenmou.UI.WPF" /C /Y
+    xcopy "$(TargetDir)*.nupkg" "C:\NuGet" /C /Y
 )</PostBuildEvent>
   </PropertyGroup>
 </Project>

@@ -1,4 +1,7 @@
-﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib">
     <FontFamily x:Key="DefaultFont">Segoe UI Light, Segoe UI, Lucida Sans Unicode</FontFamily>
+    <sys:Double x:Key="DefaultFontSize">14</sys:Double>
 </ResourceDictionary>

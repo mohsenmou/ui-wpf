@@ -1,7 +1,12 @@
-﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="clr-namespace:Mohsenmou.UI.WPF.Controls">
+
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="Fonts.xaml" />
-        <ResourceDictionary Source="Icons.xaml" />
-        <ResourceDictionary Source="System.Windows.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/Mohsenmou.UI.WPF;component/Themes/Fonts.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/Mohsenmou.UI.WPF;component/Themes/Icons.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/Mohsenmou.UI.WPF;component/Themes/System.Windows.xaml" />
     </ResourceDictionary.MergedDictionaries>
+
 </ResourceDictionary>

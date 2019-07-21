@@ -91,6 +91,6 @@
         <Setter Property="BorderThickness" Value="1" />
         <Setter Property="Template" Value="{StaticResource CheckBoxTemplate}" />
     </Style>
-    <Style BasedOn="{StaticResource CheckBoxStyle}" TargetType="{x:Type CheckBox}" />
+
 
 </ResourceDictionary>

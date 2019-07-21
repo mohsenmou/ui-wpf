@@ -4,7 +4,7 @@ namespace Mohsenmou.UI.WPF
     public partial class WindowStyles : ResourceDictionary
     {
         public WindowStyles()
-        {           
+        {
             InitializeComponent();
         }
         private void OnCloseClick(object sender, RoutedEventArgs e)

@@ -85,6 +85,6 @@
         <Setter Property="VerticalContentAlignment" Value="Center" />
         <Setter Property="Template" Value="{StaticResource RadioButtonTemplate}" />
     </Style>
-    <Style BasedOn="{StaticResource RadioButtonStyle}" TargetType="{x:Type RadioButton}" />
+
 
 </ResourceDictionary>

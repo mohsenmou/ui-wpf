@@ -110,6 +110,6 @@
         <Setter Property="Template" Value="{StaticResource ListBoxTemplate}" />
     </Style>
 
-    <Style BasedOn="{StaticResource ListBoxStyle}" TargetType="{x:Type ListBox}" />
+
 
 </ResourceDictionary>

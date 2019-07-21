@@ -6,6 +6,8 @@ namespace Mohsenmou.UI.WPF
 {
     public sealed class Theme
     {
+       
+
         [ThreadStatic]
         private static ResourceDictionary resourceDictionary;
         public static ThemeType ThemeType { get; set; } = ThemeType.Dark;
@@ -15,7 +17,7 @@ namespace Mohsenmou.UI.WPF
             {
                 if (resourceDictionary != null)
                 {
-                    return resourceDictionary;
+                    return resourceDictionary;   
                 }
                 resourceDictionary = new ResourceDictionary();
                 LoadThemeType(ThemeType.Light);

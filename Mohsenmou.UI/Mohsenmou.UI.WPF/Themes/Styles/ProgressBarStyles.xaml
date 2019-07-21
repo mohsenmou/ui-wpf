@@ -88,6 +88,6 @@
         <Setter Property="Template" Value="{StaticResource ProgressBarTemplate}" />
     </Style>
 
-    <Style BasedOn="{StaticResource ProgressBarStyle}" TargetType="{x:Type ProgressBar}" />
+
 
 </ResourceDictionary>

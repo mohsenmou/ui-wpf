@@ -396,6 +396,6 @@
         </Style.Triggers>
     </Style>
 
-    <Style BasedOn="{StaticResource SliderStyle}" TargetType="{x:Type Slider}" />
+
 
 </ResourceDictionary>
