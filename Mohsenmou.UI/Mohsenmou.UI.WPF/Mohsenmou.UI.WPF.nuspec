@@ -8,7 +8,7 @@
     <owners>$author$</owners>
     <licenseUrl type="file">LICENSE.txt</licenseUrl>
     <projectUrl>https://github.com/mohsenmou/ui-wpf</projectUrl>
-    <iconUrl>https://github.com/mohsenmou/ui-wpf</iconUrl>
+    <iconUrl>Mohsenmou.UI.WPF.logo.jpg</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
     <releaseNotes>mohsen mousavi</releaseNotes>
