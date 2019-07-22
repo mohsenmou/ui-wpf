@@ -6,9 +6,9 @@
     <title>$title$</title>
     <authors>$author$</authors>
     <owners>$author$</owners>
-    <licenseUrl type="file">LICENSE.txt</licenseUrl>
+    <licenseUrl>https://github.com/mohsenmou/ui-wpf/LICENSE.txt</licenseUrl>
     <projectUrl>https://github.com/mohsenmou/ui-wpf</projectUrl>
-    <iconUrl>Mohsenmou.UI.WPF.logo.jpg</iconUrl>
+    <iconUrl>https://github.com/mohsenmou/ui-wpf/logo.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
     <releaseNotes>mohsen mousavi</releaseNotes>
