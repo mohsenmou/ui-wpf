@@ -6,6 +6,7 @@
     <title>$title$</title>
     <authors>$author$</authors>
     <owners>$author$</owners>
+    <licenseUrl type="file">LICENSE.txt</licenseUrl>
     <projectUrl>https://github.com/mohsenmou/ui-wpf</projectUrl>
     <iconUrl>https://github.com/mohsenmou/ui-wpf</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
