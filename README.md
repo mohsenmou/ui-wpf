@@ -24,11 +24,11 @@ After installing of **Mohsenmou.UI.WPF**:
    or
 
    ```xaml
-   xmlns:controls="clr-namespace:Mohsenmou.UI.WPF.Controls;assembly=Mohsenmou.UI.WPF"
+   xmlns:mohsenmou="clr-namespace:Mohsenmou.UI.WPF.Controls;assembly=Mohsenmou.UI.WPF"
    ```
 
-
-​	   	3. Set style of MainWindow to Style="{DynamicResource MainWindowStyle}"
+	   	3. Set style of MainWindow to Style="{DynamicResource MainWindowStyle}"
+   	   	4. Set main grid background to Background="{mohsenmou:ThemeResource ResourceKey=ContentBackground}"
 
 
 ​	   
