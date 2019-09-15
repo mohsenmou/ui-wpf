@@ -8,9 +8,20 @@
     Height="450"
     mui:WindowSettings.Save="True"
     Style="{DynamicResource MainWindowStyle}">
-    <Grid Background="{mui:ThemeResource ResourceKey=ContentBackground}">
-        <controls:Accordion />
-
-
+    <Grid Background="{mui:ThemeResource ResourceKey=ContentBackground}" >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+        <controls:Accordion>
+            <mui:AccordionItem Header="First">
+                <Button BorderThickness="0">Add</Button>
+                <Button>Delete</Button>
+            </mui:AccordionItem>
+            <mui:AccordionItem Header="Second">
+                <Button>Update</Button>
+                <Button>Reset</Button>
+            </mui:AccordionItem>
+        </controls:Accordion>
     </Grid>
 </Window>
