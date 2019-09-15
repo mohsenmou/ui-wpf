@@ -18,19 +18,70 @@
                 Header="First"
                 Icon="{DynamicResource Icon_Theme}"
                 ShowIcon="True">
-                <mui:AccordionItem Header="SubItem #1"/>
-                <mui:AccordionItem Header="SubItem #2"/>
-                <mui:AccordionItem Header="SubItem #3"/>
-                <mui:AccordionItem Header="SubItem #4"/>
+                <mui:AccordionItem Header="SubItem #1" />
+                <mui:AccordionItem Header="SubItem #2" />
+                <mui:AccordionItem Header="SubItem #3" />
+                <mui:AccordionItem Header="SubItem #4" />
             </mui:AccordionItem>
-            <mui:AccordionItem Header="Second" ShowIcon="True" Icon="{DynamicResource Icon_Theme}">
-                <mui:AccordionItem Header="SubItem #1"/>
-                <mui:AccordionItem Header="SubItem #2"/>
+            <mui:AccordionItem
+                Header="Second"
+                Icon="{DynamicResource Icon_Theme}"
+                ShowIcon="True">
+                <mui:AccordionItem Header="SubItem #1" />
+                <mui:AccordionItem Header="SubItem #2" />
                 <mui:AccordionItem Header="SubItem #3">
-                    <mui:AccordionItem Header="SubItem #3-1"/>
+                    <mui:AccordionItem Header="SubItem #3-1" />
                 </mui:AccordionItem>
-                <mui:AccordionItem Header="SubItem #4"/>
+                <mui:AccordionItem Header="SubItem #4" />
             </mui:AccordionItem>
         </controls:Accordion>
+
+        <TabControl
+            Grid.Column="1"
+            Margin="10">
+            <TabItem Header="Item #1">
+                <Grid Margin="0,5,0,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <StackPanel
+                        HorizontalAlignment="Left"
+                        Orientation="Horizontal">
+                        <Button
+                            mui:ButtonProperties.Icon="{DynamicResource Icon_New}"
+                            mui:ButtonProperties.ShowIcon="True"
+                            Content="New"
+                            Style="{DynamicResource ToolBarButtonStyle}" />
+                        <Button
+                            mui:ButtonProperties.Icon="{DynamicResource Icon_Print}"
+                            mui:ButtonProperties.ShowIcon="True"
+                            Content="Print"
+                            Style="{DynamicResource ToolBarButtonStyle}" />
+                        <Button
+                            mui:ButtonProperties.Icon="{DynamicResource Icon_PrintPreview}"
+                            mui:ButtonProperties.ShowIcon="True"
+                            Content="Print Preview"
+                            Style="{DynamicResource ToolBarButtonStyle}" />
+                        <Button
+                            mui:ButtonProperties.Icon="{DynamicResource Icon_ASC_Sort}"
+                            mui:ButtonProperties.ShowIcon="True"
+                            Content="ASC Sort"
+                            Style="{DynamicResource ToolBarButtonStyle}" />
+                        <Button
+                            mui:ButtonProperties.Icon="{DynamicResource Icon_DES_Sort}"
+                            mui:ButtonProperties.ShowIcon="True"
+                            Content="DES Sort"
+                            Style="{DynamicResource ToolBarButtonStyle}" />
+                        <TextBox
+                            mui:TextBoxHelper.ClearTextButton="True" MinWidth="200"
+                            mui:TextBoxHelper.Watermark="Search something"
+                            Style="{DynamicResource ToolBarTextBoxStyle}" />
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Item #2" />
+            <TabItem Header="Item #3" />
+        </TabControl>
     </Grid>
 </Window>
