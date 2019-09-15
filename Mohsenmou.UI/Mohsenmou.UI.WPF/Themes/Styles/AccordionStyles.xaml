@@ -7,7 +7,8 @@
     <Style x:Key="ExpandCollapseToggleStyle" TargetType="{x:Type ToggleButton}">
         <Setter Property="Background" Value="{theme:ThemeResource ResourceKey=ControlBackground}" />
         <Setter Property="BorderBrush" Value="{theme:ThemeResource ResourceKey=ControlBorder}" />
-        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="BorderThickness" Value="2,0,0,0" />
+        <Setter Property="Padding" Value="8,4" />
         <Setter Property="Foreground" Value="{theme:ThemeResource ResourceKey=ControlForeground}" />
         <Setter Property="Focusable" Value="False" />
         <Setter Property="Template">
@@ -15,13 +16,14 @@
                 <ControlTemplate TargetType="{x:Type ToggleButton}">
                     <Grid>
                         <Border x:Name="border"
-                            Background="{theme:ThemeResource ResourceKey=ControlBackground}"
-                            BorderBrush="{theme:ThemeResource ResourceKey=ControlBorder}"
-                            BorderThickness="1">
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}">
                             <Grid Margin="{TemplateBinding Padding}">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="Auto" />
                                     <ColumnDefinition />
+                                    <ColumnDefinition Width="Auto" />
                                 </Grid.ColumnDefinitions>
                                 <controls:XamlImage
                                     MaxWidth="16"
@@ -30,15 +32,31 @@
                                     Template="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type controls:AccordionItem}}, Path=Icon}"
                                     Visibility="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type controls:AccordionItem}}, Path=ShowIcon}" />
                                 <ContentPresenter x:Name="HeaderSite"
-                                    Grid.Column="1" />
+                                    Grid.Column="1"
+                                    Margin="0,4" />
+                                <controls:XamlImage x:Name="PART_Direction"
+                                    Grid.Column="2"
+                                    MaxWidth="10"
+                                    MaxHeight="10"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    HorizontalContentAlignment="Center"
+                                    VerticalContentAlignment="Center"
+                                    Template="{DynamicResource Icon_Collapse}" />
                             </Grid>
                         </Border>
                         <Border x:Name="FocusBorder"
                             BorderBrush="{theme:ThemeResource ResourceKey=ControlFocusBorder}"
-                            BorderThickness="1"
+                            BorderThickness="2,0,0,0"
                             Visibility="Collapsed" />
                     </Grid>
                     <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="true">
+                            <Setter TargetName="PART_Direction" Property="Template" Value="{DynamicResource Icon_Expand}" />
+                        </Trigger>
+                        <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=TemplatedParent},Path=Items.Count}" Value="0">
+                            <Setter TargetName="PART_Direction" Property="Visibility" Value="Collapsed" />
+                        </DataTrigger>
                         <Trigger Property="IsMouseOver" Value="true">
                             <Setter TargetName="border" Property="Background" Value="{theme:ThemeResource ResourceKey=ControlMouseOverBackground}" />
                             <Setter TargetName="border" Property="BorderBrush" Value="{theme:ThemeResource ResourceKey=ControlMouseOverBorder}" />
@@ -107,7 +125,7 @@
         <Setter Property="HorizontalContentAlignment" Value="{Binding HorizontalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}" />
         <Setter Property="VerticalContentAlignment" Value="{Binding VerticalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}" />
         <Setter Property="Padding" Value="8,4" />
-        <Setter Property="Margin" Value="0,1,0,2" />
+        <Setter Property="Margin" Value="0" />
         <Setter Property="Foreground" Value="{theme:ThemeResource ResourceKey=ControlForeground}" />
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
         <Setter Property="Template" Value="{StaticResource AccordionItemTemplate}" />

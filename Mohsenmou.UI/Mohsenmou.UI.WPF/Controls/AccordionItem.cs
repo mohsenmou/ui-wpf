@@ -19,7 +19,7 @@ namespace Mohsenmou.UI.WPF.Controls
         public object Icon
         {
             get { return (object)GetValue(IconProperty); }
-            set { SetValue(IconProperty, value); }
+            set { SetValue(IconProperty, value);} 
         }
 
         public bool ShowIcon

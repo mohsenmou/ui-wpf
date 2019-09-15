@@ -8,19 +8,28 @@
     Height="450"
     mui:WindowSettings.Save="True"
     Style="{DynamicResource MainWindowStyle}">
-    <Grid Background="{mui:ThemeResource ResourceKey=ContentBackground}" >
+    <Grid Background="{mui:ThemeResource ResourceKey=ContentBackground}">
         <Grid.ColumnDefinitions>
             <ColumnDefinition />
-            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="3*" />
         </Grid.ColumnDefinitions>
-        <controls:Accordion>
-            <mui:AccordionItem Header="First">
-                <Button BorderThickness="0">Add</Button>
-                <Button>Delete</Button>
+        <controls:Accordion Margin="10">
+            <mui:AccordionItem
+                Header="First"
+                Icon="{DynamicResource Icon_Theme}"
+                ShowIcon="True">
+                <mui:AccordionItem Header="SubItem #1"/>
+                <mui:AccordionItem Header="SubItem #2"/>
+                <mui:AccordionItem Header="SubItem #3"/>
+                <mui:AccordionItem Header="SubItem #4"/>
             </mui:AccordionItem>
-            <mui:AccordionItem Header="Second">
-                <Button>Update</Button>
-                <Button>Reset</Button>
+            <mui:AccordionItem Header="Second" ShowIcon="True" Icon="{DynamicResource Icon_Theme}">
+                <mui:AccordionItem Header="SubItem #1"/>
+                <mui:AccordionItem Header="SubItem #2"/>
+                <mui:AccordionItem Header="SubItem #3">
+                    <mui:AccordionItem Header="SubItem #3-1"/>
+                </mui:AccordionItem>
+                <mui:AccordionItem Header="SubItem #4"/>
             </mui:AccordionItem>
         </controls:Accordion>
     </Grid>
