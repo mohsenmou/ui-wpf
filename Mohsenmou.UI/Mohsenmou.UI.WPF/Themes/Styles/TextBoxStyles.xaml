@@ -85,5 +85,83 @@
         </Setter>
     </Style>
 
+    <ControlTemplate x:Key="ToolBarTextBoxTemplate" TargetType="{x:Type TextBox}">
+        <Border x:Name="border"
+            Background="{TemplateBinding Background}"
+            BorderBrush="{TemplateBinding BorderBrush}"
+            BorderThickness="{TemplateBinding BorderThickness}"
+            SnapsToDevicePixels="True">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <ScrollViewer x:Name="PART_ContentHost"
+                    Focusable="false"
+                    HorizontalScrollBarVisibility="Hidden"
+                    VerticalScrollBarVisibility="Hidden" />
+                <TextBlock x:Name="PART_Watermark"
+                    Padding="{TemplateBinding Padding}"
+                    FontStyle="Italic"
+                    Opacity="0.7"
+                    Text="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(ap:TextBoxHelper.Watermark)}"
+                    Visibility="Collapsed" />
+                <Button x:Name="PART_ClearTextButton"
+                    Grid.Column="1"
+                    Margin="4,2"
+                    Click="OnClearTextClick"
+                    Style="{DynamicResource ClearButtonStyle}"
+                    Visibility="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(ap:TextBoxHelper.ClearTextButton), Converter={converters:BoolToVisibilityFlexConverter}}">
+                    <controls:XamlImage Template="{DynamicResource Icon_Close}" />
+                </Button>
+            </Grid>
+        </Border>
+        <ControlTemplate.Triggers>
+            <Trigger Property="Text" Value="">
+                <Setter TargetName="PART_Watermark" Property="Visibility" Value="Visible" />
+                <Setter TargetName="PART_ClearTextButton" Property="Visibility" Value="Collapsed" />
+                <Setter Property="Cursor" Value="IBeam" />
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="false">
+                <Setter TargetName="border" Property="Opacity" Value="{theme:ThemeResource ResourceKey=ControlDisabledOpacity}" />
+            </Trigger>
+            <Trigger Property="IsMouseOver" Value="true">
+                <Setter TargetName="border" Property="BorderBrush" Value="{theme:ThemeResource ResourceKey=ControlMouseOverBorder}" />
+            </Trigger>
+            <Trigger Property="IsKeyboardFocused" Value="true">
+                <Setter TargetName="border" Property="BorderBrush" Value="{theme:ThemeResource ResourceKey=ControlFocusBorder}" />
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+    <Style x:Key="ToolBarTextBoxStyle" TargetType="{x:Type TextBox}">
+        <Setter Property="Background" Value="{theme:ThemeResource ResourceKey=ControlMouseOverBackground}" />
+        <Setter Property="BorderBrush" Value="{theme:ThemeResource ResourceKey=ControlBorder}" />
+        <Setter Property="Foreground" Value="{theme:ThemeResource ResourceKey=ControlForeground}" />
+        <Setter Property="SelectionBrush" Value="{theme:ThemeResource ResourceKey=ControlHighlightBackground}" />
+        <Setter Property="CaretBrush" Value="{theme:ThemeResource ResourceKey=ControlForeground}" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Padding" Value="6,4,4,4" />
+        <Setter Property="KeyboardNavigation.TabNavigation" Value="None" />
+        <Setter Property="HorizontalContentAlignment" Value="Left" />
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="AllowDrop" Value="true" />
+        <Setter Property="ScrollViewer.PanningMode" Value="VerticalFirst" />
+        <Setter Property="Stylus.IsFlicksEnabled" Value="False" />
+        <Setter Property="Template" Value="{StaticResource TextBoxTemplate}" />
+        <Setter Property="Validation.ErrorTemplate">
+            <Setter.Value>
+                <ControlTemplate>
+                    <StackPanel>
+                        <AdornedElementPlaceholder x:Name="palceholder" />
+                        <TextBlock
+                            FontSize="12"
+                            Foreground="{theme:ThemeResource ResourceKey=ContentForeground}"
+                            Text="{Binding ElementName=palceholder, Path=AdornedElement.(Validation.Errors)[0].ErrorContent}" />
+                    </StackPanel>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
 
 </ResourceDictionary>
