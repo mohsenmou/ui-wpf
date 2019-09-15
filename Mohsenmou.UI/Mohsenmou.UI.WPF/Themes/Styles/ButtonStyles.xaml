@@ -18,10 +18,14 @@
                         <ColumnDefinition Width="Auto" />
                         <ColumnDefinition />
                     </Grid.ColumnDefinitions>
-                    <controls:XamlImage x:Name="icon"
+                    <controls:XamlImage x:Name="icon"                                        
                         MaxWidth="16"
                         MaxHeight="16"
-                        Margin="8,0,0,0"
+                        Margin="8,0,4,0"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        HorizontalContentAlignment="Center"
+                        VerticalContentAlignment="Center"
                         Template="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(ap:ButtonProperties.Icon)}"
                         Visibility="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(ap:ButtonProperties.ShowIcon), Converter={converters:BoolToVisibilityFlexConverter}}" />
                     <ContentPresenter x:Name="contentPresenter"
@@ -146,6 +150,83 @@
         <Setter Property="Focusable" Value="False" />
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
         <Setter Property="Template" Value="{StaticResource ClearTextButtonTemplate}" />
+    </Style>
+
+    <ControlTemplate x:Key="ToolBarButtonTemplate" TargetType="{x:Type Button}">
+        <Grid SnapsToDevicePixels="true">
+            <Border x:Name="border"
+                Background="{TemplateBinding Background}"
+                BorderBrush="{TemplateBinding BorderBrush}"
+                BorderThickness="{TemplateBinding BorderThickness}"
+                CornerRadius="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(ap:ButtonProperties.CornerRadius)}">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <controls:XamlImage x:Name="icon"                                        
+                        MaxWidth="16"
+                        MaxHeight="16"
+                        Margin="8,0"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        HorizontalContentAlignment="Center"
+                        VerticalContentAlignment="Center"
+                        Template="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(ap:ButtonProperties.Icon)}"
+                        Visibility="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(ap:ButtonProperties.ShowIcon), Converter={converters:BoolToVisibilityFlexConverter}}" />
+                    <ContentPresenter x:Name="contentPresenter"
+                        Grid.Column="1"
+                        Margin="{TemplateBinding Padding}"
+                        HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                        VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                        Focusable="False"
+                        RecognizesAccessKey="True"
+                        SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                </Grid>
+            </Border>
+            <Border x:Name="FocusBorder"
+                BorderBrush="{theme:ThemeResource ResourceKey=ControlFocusBorder}"
+                BorderThickness="1"
+                CornerRadius="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(ap:ButtonProperties.CornerRadius)}"
+                Visibility="Collapsed" />
+        </Grid>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsDefaulted" Value="true">
+                <Setter TargetName="border" Property="BorderBrush" Value="{theme:ThemeResource ResourceKey=ControlDefaultBorder}" />
+            </Trigger>
+            <Trigger Property="IsMouseOver" Value="true">
+                <Setter TargetName="border" Property="Background" Value="{theme:ThemeResource ResourceKey=ControlPressedBackground}" />
+                <Setter TargetName="border" Property="BorderBrush" Value="{theme:ThemeResource ResourceKey=ControlPressedBorder}" />
+            </Trigger>
+            <Trigger Property="IsPressed" Value="true">
+                <Setter TargetName="border" Property="Background" Value="{theme:ThemeResource ResourceKey=ControlPressedBackground}" />
+                <Setter TargetName="border" Property="BorderBrush" Value="{theme:ThemeResource ResourceKey=ControlPressedBorder}" />
+            </Trigger>
+            <Trigger Property="IsFocused" Value="true">
+                <Setter TargetName="FocusBorder" Property="Visibility" Value="Visible" />
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="false">
+                <Setter Property="Opacity" Value="{theme:ThemeResource ResourceKey=ControlDisabledOpacity}" />
+            </Trigger>
+            <Trigger SourceName="icon" Property="Visibility" Value="Collapsed">
+                <Setter Property="Padding" Value="8,4" />
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+    <Style x:Key="ToolBarButtonStyle" TargetType="{x:Type Button}">
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="Background" Value="{theme:ThemeResource ResourceKey=ControlMouseOverBackground}" />
+        <Setter Property="BorderBrush" Value="{theme:ThemeResource ResourceKey=ControlBorder}" />
+        <Setter Property="Foreground" Value="{theme:ThemeResource ResourceKey=ControlForeground}" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="UseLayoutRounding" Value="False" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="Padding" Value="0,4,8,4" />
+        <Setter Property="ap:ButtonProperties.CornerRadius" Value="0" />
+        <Setter Property="Template" Value="{StaticResource ToolBarButtonTemplate}" />
     </Style>
 
 </ResourceDictionary>
