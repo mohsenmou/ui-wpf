@@ -76,8 +76,9 @@
                         <TextBox
                             mui:TextBoxHelper.ClearTextButton="True" MinWidth="200"
                             mui:TextBoxHelper.Watermark="Search something"
-                            Style="{DynamicResource ToolBarTextBoxStyle}" />
-                    </StackPanel>
+                            Style="{DynamicResource ToolBarTextBoxStyle}" />               
+                   </StackPanel>
+                    <controls:CustomDocumnetViewer Grid.Row="1"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Item #2" />

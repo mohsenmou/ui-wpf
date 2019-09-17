@@ -60,7 +60,7 @@ namespace Mohsenmou.UI.WPF
                     InitializeLightTheme(Colors.DarkOrange);
                     break;
                 case ThemeType.Dark:
-                    InitializeDarkTheme(Colors.DarkTurquoise);
+                    InitializeDarkTheme(Colors.Violet);
                     break;
             }
         }
