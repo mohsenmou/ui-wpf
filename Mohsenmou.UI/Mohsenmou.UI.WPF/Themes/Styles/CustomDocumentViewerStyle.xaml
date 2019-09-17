@@ -1,0 +1,139 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Documents="clr-namespace:System.Windows.Documents;assembly=PresentationUI"
+    xmlns:ap="clr-namespace:Mohsenmou.UI.WPF.AttachedProperties"
+    xmlns:control="clr-namespace:Mohsenmou.UI.WPF.Controls"
+    xmlns:theme="clr-namespace:Mohsenmou.UI.WPF">
+    <Style BasedOn="{x:Null}" TargetType="{x:Type control:CustomDocumnetViewer}">
+        <Style.Resources>
+            <Style TargetType="{x:Type DocumentPageView}">
+                <Setter Property="OverridesDefaultStyle" Value="True" />
+                <Setter Property="DocumentViewerBase.BorderBrush" Value="{theme:ThemeResource ResourceKey=ContentForeground}" />
+                <Setter Property="DocumentViewerBase.BorderThickness" Value="3" />
+
+            </Style>
+        </Style.Resources>
+        <Setter Property="ShowPageBorders" Value="True" />
+        <Setter Property="Foreground" Value="{theme:ThemeResource ResourceKey=ContentForeground}" />
+        <Setter Property="Background" Value="{theme:ThemeResource ResourceKey=ContentBackground}" />
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="ContextMenu" Value="{DynamicResource {ComponentResourceKey ResourceId=PUIDocumentViewerContextMenu, TypeInTargetAssembly={x:Type Documents:PresentationUIStyleResources}}}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type control:CustomDocumnetViewer}">
+                    <Border
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        Focusable="False">
+                        <Grid
+                            Background="{TemplateBinding Background}"
+                            KeyboardNavigation.TabNavigation="Local">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <StackPanel
+                                Margin="0,5"
+                                HorizontalAlignment="Center"
+                                Background="{theme:ThemeResource ResourceKey=ContentBackground}"
+                                KeyboardNavigation.TabIndex="0"
+                                Orientation="Horizontal">
+                                <Button
+                                    Padding="5"
+                                    ap:ButtonProperties.Icon="{DynamicResource Icon_Print}"
+                                    ap:ButtonProperties.ShowIcon="True"
+                                    Command="ApplicationCommands.Print"
+                                    Content="Print"
+                                    Style="{DynamicResource ToolBarButtonStyle}" />
+                                <Button
+                                    Padding="5"
+                                    ap:ButtonProperties.Icon="{DynamicResource Icon_Copy}"
+                                    ap:ButtonProperties.ShowIcon="True"
+                                    Command="ApplicationCommands.Copy"
+                                    Content="Copy"
+                                    Style="{DynamicResource ToolBarButtonStyle}" />
+                                <Button
+                                    Padding="5"
+                                    ap:ButtonProperties.Icon="{DynamicResource Icon_ZoomIn}"
+                                    ap:ButtonProperties.ShowIcon="True"
+                                    Command="NavigationCommands.IncreaseZoom"
+                                    Content="Zoom In"
+                                    Style="{DynamicResource ToolBarButtonStyle}" />
+                                <Button
+                                    Padding="5"
+                                    ap:ButtonProperties.Icon="{DynamicResource Icon_ZoomOut}"
+                                    ap:ButtonProperties.ShowIcon="True"
+                                    Command="NavigationCommands.DecreaseZoom"
+                                    Content="Zoom Out"
+                                    Style="{DynamicResource ToolBarButtonStyle}" />
+                                <Button
+                                    Padding="5"
+                                    Command="NavigationCommands.Zoom"
+                                    CommandParameter="100"
+                                    Content="100%"
+                                    Style="{DynamicResource ToolBarButtonStyle}" />
+                                <Button
+                                    Padding="5"
+                                    Command="DocumentViewer.FitToWidthCommand"
+                                    Content="Page Width"
+                                    Style="{DynamicResource ToolBarButtonStyle}" />
+                                <Button
+                                    Padding="5"
+                                    Command="DocumentViewer.FitToMaxPagesAcrossCommand"
+                                    CommandParameter="1"
+                                    Content="Whole Page"
+                                    Style="{DynamicResource ToolBarButtonStyle}" />
+                                <Button
+                                    Padding="5"
+                                    Command="DocumentViewer.FitToMaxPagesAcrossCommand"
+                                    CommandParameter="2"
+                                    Content="2 Pages"
+                                    Style="{DynamicResource ToolBarButtonStyle}" />
+                            </StackPanel>
+                            <ScrollViewer x:Name="PART_ContentHost"
+                                Grid.Row="1"
+                                Grid.RowSpan="2"
+                                Grid.Column="0"
+                                CanContentScroll="true"
+                                Focusable="{TemplateBinding Focusable}"
+                                HorizontalScrollBarVisibility="Auto"
+                                IsTabStop="true"
+                                TabIndex="1" />
+                            <StackPanel
+                                Grid.Row="2"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Center"
+                                Background="{theme:ThemeResource ResourceKey=ContentBackground}"
+                                Orientation="Horizontal">
+                                <TextBlock
+                                    Margin="4,0,0,0"
+                                    Padding="0,3"
+                                    FontSize="12"
+                                    Foreground="{theme:ThemeResource ResourceKey=ContentForeground}"
+                                    Text="Page " />
+                                <TextBlock
+                                    Padding="0,3"
+                                    FontSize="12"
+                                    Foreground="{theme:ThemeResource ResourceKey=ContentForeground}"
+                                    Text="{Binding RelativeSource={RelativeSource AncestorType={x:Type control:CustomDocumnetViewer}}, Path=MasterPageNumber}" />
+                                <TextBlock
+                                    Padding="0,3"
+                                    FontSize="12"
+                                    Foreground="{theme:ThemeResource ResourceKey=ContentForeground}"
+                                    Text=" of " />
+                                <TextBlock
+                                    Margin="0,0,4,0"
+                                    Padding="0,3"
+                                    FontSize="12"
+                                    Foreground="{theme:ThemeResource ResourceKey=ContentForeground}"
+                                    Text="{Binding RelativeSource={RelativeSource AncestorType={x:Type control:CustomDocumnetViewer}}, Path=PageCount}" />
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

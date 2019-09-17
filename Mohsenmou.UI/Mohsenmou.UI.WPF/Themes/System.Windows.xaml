@@ -19,6 +19,7 @@
         <ResourceDictionary Source="pack://application:,,,/Mohsenmou.UI.WPF;component/Themes/Styles/RadioButtonStyles.xaml" />
         <ResourceDictionary Source="pack://application:,,,/Mohsenmou.UI.WPF;component/Themes/Styles/BadgedStyles.xaml" />
         <ResourceDictionary Source="pack://application:,,,/Mohsenmou.UI.WPF;component/Themes/Styles/AccordionStyles.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/Mohsenmou.UI.WPF;component/Themes/Styles/CustomDocumentViewerStyle.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
     <Style BasedOn="{StaticResource MainWindowStyle}" TargetType="{x:Type Window}" />
