@@ -6,6 +6,10 @@
     xmlns:theme="clr-namespace:Mohsenmou.UI.WPF">
 
     <ControlTemplate x:Key="MainWindowTemplate" TargetType="{x:Type Window}">
+        <ControlTemplate.Resources>
+            <converters:MinimizeVisibilityConverter x:Key="MinimizeVisibilityConverter" />
+            <converters:MaximizeVisibilityConverter x:Key="MaximizeVisibilityConverter" />
+        </ControlTemplate.Resources>
         <Border x:Name="RootBorder"
             BorderBrush="{theme:ThemeResource ResourceKey=WindowBorder}"
             BorderThickness="1">
@@ -45,7 +49,9 @@
                             Margin="4,0,0,0"
                             Click="OnMaximizeRestoreClick"
                             DockPanel.Dock="Right"
-                            Style="{DynamicResource WindowButtonStyle}">
+                            Style="{DynamicResource WindowButtonStyle}"
+                            Visibility="{TemplateBinding ResizeMode,
+                                                         Converter={StaticResource MaximizeVisibilityConverter}}">
                             <controls:XamlImage x:Name="MaximizeRestoreIcon"
                                 Template="{DynamicResource Icon_Maximize}" />
                         </Button>
@@ -53,13 +59,17 @@
                             Margin="4,0,0,0"
                             Click="OnMinimizeClick"
                             DockPanel.Dock="Right"
-                            Style="{DynamicResource WindowButtonStyle}">
+                            Style="{DynamicResource WindowButtonStyle}"
+                            Visibility="{TemplateBinding ResizeMode,
+                                                         Converter={StaticResource MinimizeVisibilityConverter}}">
                             <controls:XamlImage Template="{DynamicResource Icon_Minimize}" />
                         </Button>
                         <Button x:Name="ThemeButton"
                             Click="OnThemeClick"
                             DockPanel.Dock="Right"
-                            Style="{DynamicResource WindowButtonStyle}">
+                            Style="{DynamicResource WindowButtonStyle}"
+                            Visibility="{TemplateBinding ResizeMode,
+                                                         Converter={StaticResource MinimizeVisibilityConverter}}">
                             <controls:XamlImage Template="{DynamicResource Icon_Theme}" />
                         </Button>
                     </DockPanel>

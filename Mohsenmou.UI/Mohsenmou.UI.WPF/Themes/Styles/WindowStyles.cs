@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+
 namespace Mohsenmou.UI.WPF
 {
     public partial class WindowStyles : ResourceDictionary
