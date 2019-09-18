@@ -11,7 +11,7 @@
     <iconUrl>https://github.com/mohsenmou/ui-wpf/logo.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
-    <releaseNotes>mohsen mousavi</releaseNotes>
+    <releaseNotes>Add CustomDocumentViewer control, add style for toolbar buttons and textboxes, change accordion style, add some useful icons</releaseNotes>
     <copyright>Copyright 2019 Mohsenmou</copyright>
     <tags>WPF Toolkit, Custom Controls, Theme Support</tags>
   </metadata>
