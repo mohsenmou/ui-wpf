@@ -7,6 +7,9 @@
     xmlns:theme="clr-namespace:Mohsenmou.UI.WPF">
 
     <Style x:Key="TabControlCloseButtonStyle" TargetType="{x:Type Button}">
+        <Style.Resources>
+            <BooleanToVisibilityConverter x:Key="booleanToVisibilityConverter"/>
+        </Style.Resources>
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
         <Setter Property="Background" Value="{theme:ThemeResource ResourceKey=ListSelectedBackground}" />
         <Setter Property="Foreground" Value="{theme:ThemeResource ResourceKey=ControlForeground}" />

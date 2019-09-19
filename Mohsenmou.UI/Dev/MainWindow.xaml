@@ -6,7 +6,7 @@
     Title="MainWindow"
     Width="800"
     Height="450"
-    mui:WindowSettings.Save="True" 
+    mui:WindowSettings.Save="True"
     Style="{DynamicResource MainWindowStyle}">
     <Grid Background="{mui:ThemeResource ResourceKey=ContentBackground}">
         <Grid.ColumnDefinitions>
@@ -74,14 +74,23 @@
                             Content="DES Sort"
                             Style="{DynamicResource ToolBarButtonStyle}" />
                         <TextBox
-                            mui:TextBoxHelper.ClearTextButton="True" MinWidth="200"
+                            MinWidth="200"
+                            mui:TextBoxHelper.ClearTextButton="True"
                             mui:TextBoxHelper.Watermark="Search something"
-                            Style="{DynamicResource ToolBarTextBoxStyle}" />               
-                   </StackPanel>
-                    <controls:CustomDocumnetViewer Grid.Row="1"/>
+                            Style="{DynamicResource ToolBarTextBoxStyle}" />
+                    </StackPanel>
+                    <controls:CustomDocumnetViewer Grid.Row="1" />
                 </Grid>
             </TabItem>
-            <TabItem Header="Item #2" />
+            <TabItem Header="Item #2">
+                <StackPanel>
+                    <ComboBox>
+                        <ComboBoxItem>Item 1</ComboBoxItem>
+                        <ComboBoxItem>Item 2</ComboBoxItem>
+                        <ComboBoxItem>Item 3</ComboBoxItem>
+                    </ComboBox>
+                </StackPanel>
+            </TabItem>
             <TabItem Header="Item #3" />
         </TabControl>
     </Grid>
