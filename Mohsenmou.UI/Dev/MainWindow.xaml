@@ -84,7 +84,7 @@
             </TabItem>
             <TabItem Header="Item #2">
                 <StackPanel>
-                    <ComboBox>
+                    <ComboBox Width="200" Margin="10">
                         <ComboBoxItem>Item 1</ComboBoxItem>
                         <ComboBoxItem>Item 2</ComboBoxItem>
                         <ComboBoxItem>Item 3</ComboBoxItem>
