@@ -325,6 +325,19 @@
         <Setter Property="ScrollViewer.CanContentScroll" Value="true" />
         <Setter Property="ScrollViewer.PanningMode" Value="Both" />
         <Setter Property="Stylus.IsFlicksEnabled" Value="False" />
+        <Setter Property="Validation.ErrorTemplate">
+            <Setter.Value>
+                <ControlTemplate>
+                    <StackPanel>
+                        <AdornedElementPlaceholder x:Name="palceholder" />
+                        <TextBlock
+                            FontSize="12"
+                            Foreground="{theme:ThemeResource ResourceKey=ContentForeground}"
+                            Text="{Binding ElementName=palceholder, Path=AdornedElement.(Validation.Errors)[0].ErrorContent}" />
+                    </StackPanel>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
         <Setter Property="Template" Value="{StaticResource ComboBoxTemplate}" />
         <Style.Triggers>
             <Trigger Property="IsEditable" Value="true">
