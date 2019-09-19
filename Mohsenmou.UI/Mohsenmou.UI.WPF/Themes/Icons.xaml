@@ -3,6 +3,26 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:mui="clr-namespace:Mohsenmou.UI.WPF.Controls">
 
+    <ControlTemplate x:Key="Icon_ComboBox_Expand" TargetType="{x:Type mui:XamlImage}">
+        <Viewbox>
+            <Canvas x:Name="canvas"
+                Width="32"
+                Height="32"
+                SnapsToDevicePixels="False"
+                UseLayoutRounding="False">
+                <Grid
+                    Width="{Binding ElementName=canvas, Path=ActualWidth}"
+                    Height="{Binding ElementName=canvas, Path=ActualHeight}">
+                    <Path
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Data="M4.22,10.78,2.78,12.22l12.5,12.5.72.69.72-.69,12.5-12.5-1.44-1.44L16,22.56Z"
+                        Fill="{TemplateBinding Foreground}" />
+                </Grid>
+            </Canvas>
+        </Viewbox>
+    </ControlTemplate>
+
     <ControlTemplate x:Key="Icon_Info" TargetType="{x:Type mui:XamlImage}">
         <Viewbox>
             <Canvas

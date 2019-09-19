@@ -78,7 +78,7 @@
                     Height="16"
                     Margin="4,2"
                     Foreground="{theme:ThemeResource ResourceKey=GlyphForeground}"
-                    Template="{DynamicResource Icon_Expand}" />
+                    Template="{DynamicResource Icon_ComboBox_Expand}" />
             </Border>
         </Border>
         <ControlTemplate.Triggers>
